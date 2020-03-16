@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		64CB2A93559BE5DE2E75143E /* Pods_DwPupuAbstract_DwPupuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D59C25084DFB3D89E6FCACD /* Pods_DwPupuAbstract_DwPupuTests.framework */; };
 		A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A10241F9F0300C6863B /* AppDelegate.swift */; };
 		A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A19241F9F0600C6863B /* Assets.xcassets */; };
-		A6C08A1D241F9F0600C6863B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A1B241F9F0600C6863B /* LaunchScreen.storyboard */; };
 		A6C08A28241F9F0700C6863B /* DwPupuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A27241F9F0700C6863B /* DwPupuTests.swift */; };
 		A6C08A33241F9F0700C6863B /* DwPupuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A32241F9F0700C6863B /* DwPupuUITests.swift */; };
 		A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */; };
@@ -46,10 +45,10 @@
 		6F34807880DDDEC8F32458BA /* Pods-DwPupuAbstract-DwPupu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupu.release.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupu/Pods-DwPupuAbstract-DwPupu.release.xcconfig"; sourceTree = "<group>"; };
 		8410F3E14CD41A27167778AD /* Pods_DwPupuAbstract_DwPupu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwPupuAbstract_DwPupu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A80CE46165BFCA6CFB59F9 /* Pods_DwPupuAbstract_DwPupuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwPupuAbstract_DwPupuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6C08A0D241F9F0300C6863B /* DwPupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwPupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6792E57241FB9BC00197870 /* Arial Narrow Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Bold.ttf"; sourceTree = "<group>"; };
+		A6C08A0D241F9F0300C6863B /* 朴朴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "朴朴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C08A10241F9F0300C6863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C08A19241F9F0600C6863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A6C08A1C241F9F0600C6863B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6C08A1E241F9F0600C6863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6C08A23241F9F0700C6863B /* DwPupuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DwPupuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C08A27241F9F0700C6863B /* DwPupuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwPupuTests.swift; sourceTree = "<group>"; };
@@ -103,9 +102,67 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A6792E50241FAD3900197870 /* Common Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Common Classes";
+			sourceTree = "<group>";
+		};
+		A6792E51241FAD5E00197870 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A6792E57241FB9BC00197870 /* Arial Narrow Bold.ttf */,
+				A6C08A19241F9F0600C6863B /* Assets.xcassets */,
+				A6C08A1E241F9F0600C6863B /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A6792E52241FAD8100197870 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */,
+				A6C08A41241F9F7F00C6863B /* PupuIndexViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6792E53241FAD9000197870 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A6792E54241FADA400197870 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		A6792E55241FAE2900197870 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6792E56241FAE4500197870 /* PupuApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PupuApi;
+			sourceTree = "<group>";
+		};
 		A6C08A04241F9F0300C6863B = {
 			isa = PBXGroup;
 			children = (
+				A6792E56241FAE4500197870 /* PupuApi */,
+				A6792E55241FAE2900197870 /* Models */,
+				A6792E54241FADA400197870 /* View Models */,
+				A6792E50241FAD3900197870 /* Common Classes */,
 				A6C08A0F241F9F0300C6863B /* DwPupu */,
 				A6C08A26241F9F0700C6863B /* DwPupuTests */,
 				A6C08A31241F9F0700C6863B /* DwPupuUITests */,
@@ -118,7 +175,7 @@
 		A6C08A0E241F9F0300C6863B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6C08A0D241F9F0300C6863B /* DwPupu.app */,
+				A6C08A0D241F9F0300C6863B /* 朴朴.app */,
 				A6C08A23241F9F0700C6863B /* DwPupuTests.xctest */,
 				A6C08A2E241F9F0700C6863B /* DwPupuUITests.xctest */,
 			);
@@ -128,12 +185,10 @@
 		A6C08A0F241F9F0300C6863B /* DwPupu */ = {
 			isa = PBXGroup;
 			children = (
+				A6792E53241FAD9000197870 /* Extensions */,
+				A6792E52241FAD8100197870 /* ViewControllers */,
+				A6792E51241FAD5E00197870 /* Assets */,
 				A6C08A10241F9F0300C6863B /* AppDelegate.swift */,
-				A6C08A19241F9F0600C6863B /* Assets.xcassets */,
-				A6C08A1B241F9F0600C6863B /* LaunchScreen.storyboard */,
-				A6C08A1E241F9F0600C6863B /* Info.plist */,
-				A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */,
-				A6C08A41241F9F7F00C6863B /* PupuIndexViewController.xib */,
 			);
 			path = DwPupu;
 			sourceTree = "<group>";
@@ -170,7 +225,6 @@
 				058A3A0CBA51A495EE19418E /* Pods-DwPupuUITests.debug.xcconfig */,
 				EDE1D76AB4713B2069A192E1 /* Pods-DwPupuUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -193,7 +247,7 @@
 			);
 			name = DwPupu;
 			productName = DwPupu;
-			productReference = A6C08A0D241F9F0300C6863B /* DwPupu.app */;
+			productReference = A6C08A0D241F9F0300C6863B /* 朴朴.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A6C08A22241F9F0700C6863B /* DwPupuTests */ = {
@@ -284,7 +338,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6C08A1D241F9F0600C6863B /* LaunchScreen.storyboard in Resources */,
 				A6C08A43241F9F7F00C6863B /* PupuIndexViewController.xib in Resources */,
 				A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */,
 			);
@@ -467,17 +520,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		A6C08A1B241F9F0600C6863B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A6C08A1C241F9F0600C6863B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		A6C08A35241F9F0700C6863B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -598,15 +640,18 @@
 			baseConfigurationReference = 5192E84CDF03301C1934C226 /* Pods-DwPupuAbstract-DwPupu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L6U7BB57HF;
-				INFOPLIST_FILE = DwPupu/Info.plist;
+				INFOPLIST_FILE = DwPupu/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupu;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "朴朴";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,15 +662,18 @@
 			baseConfigurationReference = 6F34807880DDDEC8F32458BA /* Pods-DwPupuAbstract-DwPupu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L6U7BB57HF;
-				INFOPLIST_FILE = DwPupu/Info.plist;
+				INFOPLIST_FILE = DwPupu/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupu;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "朴朴";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
