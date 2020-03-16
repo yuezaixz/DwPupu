@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PupuIndexViewController.swift
 //  DwPupu
 //
 //  Created by 吴迪玮 on 2020/3/16.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PupuIndexViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
 }
-
