@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		50A345CD631FB9A64AD4AFE2 /* Pods_DwPupuAbstract_DwPupu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8410F3E14CD41A27167778AD /* Pods_DwPupuAbstract_DwPupu.framework */; };
 		64CB2A93559BE5DE2E75143E /* Pods_DwPupuAbstract_DwPupuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D59C25084DFB3D89E6FCACD /* Pods_DwPupuAbstract_DwPupuTests.framework */; };
+		A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E58241FC14600197870 /* PupuCategoryViewController.swift */; };
+		A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6792E59241FC14600197870 /* PupuCategoryViewController.xib */; };
+		A6792E5E241FC16600197870 /* PupuTodayHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E5C241FC16600197870 /* PupuTodayHotViewController.swift */; };
+		A6792E5F241FC16600197870 /* PupuTodayHotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6792E5D241FC16600197870 /* PupuTodayHotViewController.xib */; };
+		A6792E62241FC18A00197870 /* PupuShopCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E60241FC18A00197870 /* PupuShopCarViewController.swift */; };
+		A6792E63241FC18A00197870 /* PupuShopCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6792E61241FC18A00197870 /* PupuShopCarViewController.xib */; };
+		A6792E66241FC1BC00197870 /* PupuMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E64241FC1BC00197870 /* PupuMyViewController.swift */; };
+		A6792E67241FC1BC00197870 /* PupuMyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6792E65241FC1BC00197870 /* PupuMyViewController.xib */; };
+		A6792E6B241FCDA400197870 /* DwTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E6A241FCDA400197870 /* DwTabBarController.swift */; };
+		A6792E6E241FD1F500197870 /* DwTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E6D241FD1F500197870 /* DwTabBar.swift */; };
 		A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A10241F9F0300C6863B /* AppDelegate.swift */; };
 		A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A19241F9F0600C6863B /* Assets.xcassets */; };
 		A6C08A28241F9F0700C6863B /* DwPupuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A27241F9F0700C6863B /* DwPupuTests.swift */; };
@@ -46,6 +56,16 @@
 		8410F3E14CD41A27167778AD /* Pods_DwPupuAbstract_DwPupu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwPupuAbstract_DwPupu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A80CE46165BFCA6CFB59F9 /* Pods_DwPupuAbstract_DwPupuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwPupuAbstract_DwPupuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6792E57241FB9BC00197870 /* Arial Narrow Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Bold.ttf"; sourceTree = "<group>"; };
+		A6792E58241FC14600197870 /* PupuCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuCategoryViewController.swift; sourceTree = "<group>"; };
+		A6792E59241FC14600197870 /* PupuCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuCategoryViewController.xib; sourceTree = "<group>"; };
+		A6792E5C241FC16600197870 /* PupuTodayHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuTodayHotViewController.swift; sourceTree = "<group>"; };
+		A6792E5D241FC16600197870 /* PupuTodayHotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuTodayHotViewController.xib; sourceTree = "<group>"; };
+		A6792E60241FC18A00197870 /* PupuShopCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuShopCarViewController.swift; sourceTree = "<group>"; };
+		A6792E61241FC18A00197870 /* PupuShopCarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuShopCarViewController.xib; sourceTree = "<group>"; };
+		A6792E64241FC1BC00197870 /* PupuMyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuMyViewController.swift; sourceTree = "<group>"; };
+		A6792E65241FC1BC00197870 /* PupuMyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuMyViewController.xib; sourceTree = "<group>"; };
+		A6792E6A241FCDA400197870 /* DwTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwTabBarController.swift; sourceTree = "<group>"; };
+		A6792E6D241FD1F500197870 /* DwTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwTabBar.swift; sourceTree = "<group>"; };
 		A6C08A0D241F9F0300C6863B /* 朴朴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "朴朴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C08A10241F9F0300C6863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C08A19241F9F0600C6863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +125,7 @@
 		A6792E50241FAD3900197870 /* Common Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A6792E69241FCD6400197870 /* ViewControllers */,
 			);
 			path = "Common Classes";
 			sourceTree = "<group>";
@@ -122,8 +143,17 @@
 		A6792E52241FAD8100197870 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A6792E6A241FCDA400197870 /* DwTabBarController.swift */,
 				A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */,
 				A6C08A41241F9F7F00C6863B /* PupuIndexViewController.xib */,
+				A6792E58241FC14600197870 /* PupuCategoryViewController.swift */,
+				A6792E59241FC14600197870 /* PupuCategoryViewController.xib */,
+				A6792E5C241FC16600197870 /* PupuTodayHotViewController.swift */,
+				A6792E5D241FC16600197870 /* PupuTodayHotViewController.xib */,
+				A6792E60241FC18A00197870 /* PupuShopCarViewController.swift */,
+				A6792E61241FC18A00197870 /* PupuShopCarViewController.xib */,
+				A6792E64241FC1BC00197870 /* PupuMyViewController.swift */,
+				A6792E65241FC1BC00197870 /* PupuMyViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -156,6 +186,21 @@
 			path = PupuApi;
 			sourceTree = "<group>";
 		};
+		A6792E69241FCD6400197870 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6792E6C241FD1E200197870 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6792E6D241FD1F500197870 /* DwTabBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A6C08A04241F9F0300C6863B = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +230,7 @@
 		A6C08A0F241F9F0300C6863B /* DwPupu */ = {
 			isa = PBXGroup;
 			children = (
+				A6792E6C241FD1E200197870 /* Views */,
 				A6792E53241FAD9000197870 /* Extensions */,
 				A6792E52241FAD8100197870 /* ViewControllers */,
 				A6792E51241FAD5E00197870 /* Assets */,
@@ -338,8 +384,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6792E63241FC18A00197870 /* PupuShopCarViewController.xib in Resources */,
+				A6792E5F241FC16600197870 /* PupuTodayHotViewController.xib in Resources */,
+				A6792E67241FC1BC00197870 /* PupuMyViewController.xib in Resources */,
 				A6C08A43241F9F7F00C6863B /* PupuIndexViewController.xib in Resources */,
 				A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */,
+				A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,8 +534,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6792E6E241FD1F500197870 /* DwTabBar.swift in Sources */,
+				A6792E66241FC1BC00197870 /* PupuMyViewController.swift in Sources */,
+				A6792E5E241FC16600197870 /* PupuTodayHotViewController.swift in Sources */,
 				A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */,
+				A6792E6B241FCDA400197870 /* DwTabBarController.swift in Sources */,
+				A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */,
 				A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */,
+				A6792E62241FC18A00197870 /* PupuShopCarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
