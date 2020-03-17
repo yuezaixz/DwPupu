@@ -17,7 +17,7 @@ class DeviceUtil {
               }
               
               if unwrapedWindow.safeAreaInsets.left > 0 || unwrapedWindow.safeAreaInsets.bottom > 0 {
-                  print(unwrapedWindow.safeAreaInsets)
+//                  print(unwrapedWindow.safeAreaInsets)
                   return true
               }
         }

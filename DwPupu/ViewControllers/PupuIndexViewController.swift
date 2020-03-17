@@ -20,8 +20,11 @@ class PupuIndexViewController: UIViewController {
     
     @IBOutlet weak var bannerInHomeView: UIView!
     @IBOutlet weak var bannerTopView: UIView!
+    @IBOutlet weak var bannerBgView: UIView!
     @IBOutlet weak var bannerContainerView: UIView!
     @IBOutlet weak var bannerInHomeHeight: NSLayoutConstraint!
+    
+    @IBOutlet var bannerTopViews: [UIView]!
     
     private var headerView: IndexHeaderView!
     private let disposeBag = DisposeBag()
@@ -69,16 +72,12 @@ class PupuIndexViewController: UIViewController {
             }
         }
         self.mainScrollView.contentInsetAdjustmentBehavior = .never
-        
-        let testLabel = UILabel(frame: CGRect(x: 0, y: 100, width: 20, height: 500))
-        testLabel.numberOfLines = 0
-        testLabel.text = "12kksdlfassfjaskljnklvmklasmdfasjdklfjawkl;ejfklasdnmvklsadjfklajsdklfjasdkl;fjklasmcklasdjflkasjdfkljslf"
-        scrollContainerView.addSubview(testLabel)
     }
     
     private func setupHeaderView() {
         headerView = Bundle.main.loadNibNamed("IndexHeaderView", owner: nil, options: nil)?[0] as? IndexHeaderView
         self.view.addSubview(headerView)
+        
         headerView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             
@@ -121,28 +120,47 @@ class PupuIndexViewController: UIViewController {
         if DeviceUtil.isFullScreen {
             bannerInHomeHeight.constant = 352
         }
+        self.viewModel.topColor.subscribe(onNext: {[weak self] color in
+            guard let self = self else { return }
+            
+
+            self.bannerTopViews.forEach { bannerTopView in
+                bannerTopView.backgroundColor = color
+            }
+            
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.bannerBgView.bounds
+            gradientLayer.startPoint = CGPoint(x: 0,y: 0)
+            gradientLayer.endPoint = CGPoint(x: 0,y: 1)
+            //设置渐变的主颜色
+            gradientLayer.colors = [color.cgColor, UIColor.white.cgColor]
+            //将gradientLayer作为子layer添加到主layer上
+            self.bannerBgView.layer.addSublayer(gradientLayer)
+
+        }).disposed(by: disposeBag)
         
         viewModel.banners
             .filter({  $0.count > 0 })
             .map({ banners in
-                return banners.filter{$0.bgColor.count > 0}.map{$0.imgUrl}
+                return Array(banners.filter{$0.bgColor.count > 0}[0..<8]).map{$0.imgUrl}
             }).subscribe(onNext: { [weak self] images in
                 guard let self = self else { return }
                 self.bannerContainerView.subviews.forEach({ view in
                     view.removeFromSuperview()
                 })
-                let screenWidth = self.bannerContainerView.bounds.width
-                let imageHeight = 0.765124555*screenWidth
-                let autoScrollView = LTAutoScrollView(frame: CGRect(x: 0, y: 192-imageHeight, width: screenWidth, height:imageHeight))
+                self.viewModel.bannerIndex.accept(0)
+                let imageWidth = self.bannerContainerView.bounds.width
+                let imageHeight = 0.765124555*imageWidth
+                let autoScrollView = LTAutoScrollView(frame: CGRect(x: 0, y: 192-imageHeight, width: imageWidth, height:imageHeight))
 
                 //设置滚动时间间隔 默认2.0s
-                autoScrollView.glt_timeInterval = 4
+                autoScrollView.glt_timeInterval = 15.0
                         
                 //设置轮播图的方向 默认水平
                 autoScrollView.scrollDirection = .horizontal
 
                 //加载网络图片传入图片url数组， 加载本地图片传入图片名称数组
-                autoScrollView.images = Array(images[0..<8])
+                autoScrollView.images = images
         //
         //        //加载图片，内部不依赖任何图片加载框架
                 autoScrollView.imageHandle = {(imageView, imageName) in
@@ -159,18 +177,21 @@ class PupuIndexViewController: UIViewController {
                 autoScrollView.dotDirection = .right
 
                 //点击事件
-                autoScrollView.didSelectItemHandle = {
+                autoScrollView.didSelectItemHandle = {[weak self] in
                     print("autoScrollView1 点击了第 \($0) 个索引")
+                    self?.viewModel.bannerIndex.accept($0)
                 }
 
                 //自动滚动到当前索引事件
-                autoScrollView.autoDidSelectItemHandle = { index in
+                autoScrollView.autoDidSelectItemHandle = {[weak self]  index in
                     print("autoScrollView1 自动滚动到了第 \(index) 个索引")
+                    self?.viewModel.bannerIndex.accept(index)
                 }
 
                 //PageControl点击事件
-                autoScrollView.pageControlDidSelectIndexHandle = { index in
+                autoScrollView.pageControlDidSelectIndexHandle = {[weak self]  index in
                     print("autoScrollView1 pageControl点击了第 \(index) 个索引")
+                    self?.viewModel.bannerIndex.accept(index)
                 }
 
                 //dot在轮播图的位置 左侧 或 右侧时，距离最屏幕最左边或最最右边的距离，默认0
