@@ -31,6 +31,9 @@
 		A6D1A10E2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */; };
 		A6D1A1102420D93C00CDEAC2 /* PupuApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A10F2420D93C00CDEAC2 /* PupuApiController.swift */; };
 		A6D1A1122420DA3D00CDEAC2 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A1112420DA3D00CDEAC2 /* Banner.swift */; };
+		A6D1A1152421092800CDEAC2 /* LTAutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A1142421092800CDEAC2 /* LTAutoScrollView.swift */; };
+		A6D1A1172421148D00CDEAC2 /* IndexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A1162421148D00CDEAC2 /* IndexViewModel.swift */; };
+		A6D1A119242119B900CDEAC2 /* LTAutoScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A118242119B900CDEAC2 /* LTAutoScrollView+Rx.swift */; };
 		CBED216E23EF849A5E0CEB8F /* Pods_DwPupuAbstract_DwPupuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A80CE46165BFCA6CFB59F9 /* Pods_DwPupuAbstract_DwPupuUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexHeaderView+Rx.swift"; sourceTree = "<group>"; };
 		A6D1A10F2420D93C00CDEAC2 /* PupuApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuApiController.swift; sourceTree = "<group>"; };
 		A6D1A1112420DA3D00CDEAC2 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		A6D1A1142421092800CDEAC2 /* LTAutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTAutoScrollView.swift; sourceTree = "<group>"; };
+		A6D1A1162421148D00CDEAC2 /* IndexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewModel.swift; sourceTree = "<group>"; };
+		A6D1A118242119B900CDEAC2 /* LTAutoScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LTAutoScrollView+Rx.swift"; sourceTree = "<group>"; };
 		BAF82E91E03B0BFE17688284 /* Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7211F44D6C1C27CD618159F /* Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupuUITests/Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D89982A8DE577919D97C85F8 /* Pods-DwPupuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuTests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuTests/Pods-DwPupuTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		A6792E50241FAD3900197870 /* Common Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A6D1A1132421091600CDEAC2 /* Views */,
 				A61DCF692420897A0036F8DC /* Utils */,
 				A6792E69241FCD6400197870 /* ViewControllers */,
 			);
@@ -183,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */,
+				A6D1A118242119B900CDEAC2 /* LTAutoScrollView+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 		A6792E54241FADA400197870 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6D1A1162421148D00CDEAC2 /* IndexViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -281,6 +290,14 @@
 				A6C08A34241F9F0700C6863B /* Info.plist */,
 			);
 			path = DwPupuUITests;
+			sourceTree = "<group>";
+		};
+		A6D1A1132421091600CDEAC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6D1A1142421092800CDEAC2 /* LTAutoScrollView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EC20371452BB56CCAD6F04FD /* Pods */ = {
@@ -573,7 +590,10 @@
 				A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */,
 				A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */,
 				A6D1A1122420DA3D00CDEAC2 /* Banner.swift in Sources */,
+				A6D1A119242119B900CDEAC2 /* LTAutoScrollView+Rx.swift in Sources */,
+				A6D1A1152421092800CDEAC2 /* LTAutoScrollView.swift in Sources */,
 				A6792E62241FC18A00197870 /* PupuShopCarViewController.swift in Sources */,
+				A6D1A1172421148D00CDEAC2 /* IndexViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
   - Differentiator (3.1.0)
+  - Kingfisher (5.3.1)
   - PullToRefresher (3.1)
   - Reachability (3.2)
   - Realm (3.12.0):
@@ -37,6 +38,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Kingfisher
   - PullToRefresher
   - Reachability (= 3.2.0)
   - RealmSwift (= 3.12.0)
@@ -55,6 +57,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Differentiator
+    - Kingfisher
     - PullToRefresher
     - Reachability
     - Realm
@@ -74,6 +77,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   PullToRefresher: ec8c1942bd61bb512ff520c49f9f00903cfa86c7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   Then: 665607ef49c6c3f66c722cd02b7b53745a622f49
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 
-PODFILE CHECKSUM: 88e2a5861c644e9e1cea688fd8a6239fa522adc5
+PODFILE CHECKSUM: 6d657556d38698075dfcf2cb874e0775bc5db6a6
 
 COCOAPODS: 1.7.5

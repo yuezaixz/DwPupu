@@ -15,6 +15,7 @@ abstract_target 'DwPupuAbstract' do
     pod 'RxRealmDataSources', '0.2.10'
     pod 'SnapKit', '~> 5.0.0'
     pod 'PullToRefresher'
+    pod 'Kingfisher'
 
     target 'DwPupu' do
         platform :ios, '10.0'

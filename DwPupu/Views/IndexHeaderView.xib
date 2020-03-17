@@ -109,7 +109,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nL3-OD-cku" secondAttribute="trailing" constant="15" id="8jI-aW-WlW"/>
                 <constraint firstItem="nL3-OD-cku" firstAttribute="top" secondItem="QTK-Zx-uWR" secondAttribute="bottom" id="GQy-hk-Oif"/>
