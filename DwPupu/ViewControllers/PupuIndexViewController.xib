@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PupuIndexViewController" customModule="朴朴" customModuleProvider="target">
             <connections>
+                <outlet property="mainTableView" destination="Khb-zM-ADQ" id="L2j-zl-c6K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,17 +18,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgx-Of-nIP">
-                    <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-zM-ADQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Mgx-Of-nIP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lcc-5m-PsX"/>
-                <constraint firstItem="Mgx-Of-nIP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="m3a-HR-Qos"/>
+                <constraint firstItem="Khb-zM-ADQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5gC-UC-Qm6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Khb-zM-ADQ" secondAttribute="trailing" id="FAW-gA-MKo"/>
+                <constraint firstItem="Khb-zM-ADQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bt6-vH-JPd"/>
+                <constraint firstAttribute="bottom" secondItem="Khb-zM-ADQ" secondAttribute="bottom" id="gf3-YW-AWf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="154"/>

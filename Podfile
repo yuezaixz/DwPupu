@@ -13,6 +13,8 @@ abstract_target 'DwPupuAbstract' do
     pod 'Then', '2.2.1'
     pod 'Reachability', '3.2.0'
     pod 'RxRealmDataSources', '0.2.10'
+    pod 'SnapKit', '~> 5.0.0'
+    pod 'PullToRefresher'
 
     target 'DwPupu' do
         platform :ios, '10.0'

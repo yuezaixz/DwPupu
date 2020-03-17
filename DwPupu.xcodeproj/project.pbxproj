@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		50A345CD631FB9A64AD4AFE2 /* Pods_DwPupuAbstract_DwPupu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8410F3E14CD41A27167778AD /* Pods_DwPupuAbstract_DwPupu.framework */; };
 		64CB2A93559BE5DE2E75143E /* Pods_DwPupuAbstract_DwPupuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D59C25084DFB3D89E6FCACD /* Pods_DwPupuAbstract_DwPupuTests.framework */; };
+		A61DCF66242081F50036F8DC /* IndexHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61DCF65242081F50036F8DC /* IndexHeaderView.swift */; };
+		A61DCF68242082CC0036F8DC /* IndexHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61DCF67242082CC0036F8DC /* IndexHeaderView.xib */; };
+		A61DCF6B2420898B0036F8DC /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */; };
 		A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E58241FC14600197870 /* PupuCategoryViewController.swift */; };
 		A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6792E59241FC14600197870 /* PupuCategoryViewController.xib */; };
 		A6792E5E241FC16600197870 /* PupuTodayHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E5C241FC16600197870 /* PupuTodayHotViewController.swift */; };
@@ -25,6 +28,9 @@
 		A6C08A33241F9F0700C6863B /* DwPupuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A32241F9F0700C6863B /* DwPupuUITests.swift */; };
 		A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */; };
 		A6C08A43241F9F7F00C6863B /* PupuIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A41241F9F7F00C6863B /* PupuIndexViewController.xib */; };
+		A6D1A10E2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */; };
+		A6D1A1102420D93C00CDEAC2 /* PupuApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A10F2420D93C00CDEAC2 /* PupuApiController.swift */; };
+		A6D1A1122420DA3D00CDEAC2 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A1112420DA3D00CDEAC2 /* Banner.swift */; };
 		CBED216E23EF849A5E0CEB8F /* Pods_DwPupuAbstract_DwPupuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A80CE46165BFCA6CFB59F9 /* Pods_DwPupuAbstract_DwPupuUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +61,9 @@
 		6F34807880DDDEC8F32458BA /* Pods-DwPupuAbstract-DwPupu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupu.release.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupu/Pods-DwPupuAbstract-DwPupu.release.xcconfig"; sourceTree = "<group>"; };
 		8410F3E14CD41A27167778AD /* Pods_DwPupuAbstract_DwPupu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwPupuAbstract_DwPupu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A80CE46165BFCA6CFB59F9 /* Pods_DwPupuAbstract_DwPupuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwPupuAbstract_DwPupuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61DCF65242081F50036F8DC /* IndexHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexHeaderView.swift; sourceTree = "<group>"; };
+		A61DCF67242082CC0036F8DC /* IndexHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexHeaderView.xib; sourceTree = "<group>"; };
+		A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
 		A6792E57241FB9BC00197870 /* Arial Narrow Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Bold.ttf"; sourceTree = "<group>"; };
 		A6792E58241FC14600197870 /* PupuCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuCategoryViewController.swift; sourceTree = "<group>"; };
 		A6792E59241FC14600197870 /* PupuCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuCategoryViewController.xib; sourceTree = "<group>"; };
@@ -78,6 +87,9 @@
 		A6C08A34241F9F0700C6863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuIndexViewController.swift; sourceTree = "<group>"; };
 		A6C08A41241F9F7F00C6863B /* PupuIndexViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuIndexViewController.xib; sourceTree = "<group>"; };
+		A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexHeaderView+Rx.swift"; sourceTree = "<group>"; };
+		A6D1A10F2420D93C00CDEAC2 /* PupuApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuApiController.swift; sourceTree = "<group>"; };
+		A6D1A1112420DA3D00CDEAC2 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		BAF82E91E03B0BFE17688284 /* Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7211F44D6C1C27CD618159F /* Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupuUITests/Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D89982A8DE577919D97C85F8 /* Pods-DwPupuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuTests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuTests/Pods-DwPupuTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,9 +134,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A61DCF692420897A0036F8DC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A6792E50241FAD3900197870 /* Common Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A61DCF692420897A0036F8DC /* Utils */,
 				A6792E69241FCD6400197870 /* ViewControllers */,
 			);
 			path = "Common Classes";
@@ -161,6 +182,7 @@
 		A6792E53241FAD9000197870 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +197,7 @@
 		A6792E55241FAE2900197870 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6D1A1112420DA3D00CDEAC2 /* Banner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +205,7 @@
 		A6792E56241FAE4500197870 /* PupuApi */ = {
 			isa = PBXGroup;
 			children = (
+				A6D1A10F2420D93C00CDEAC2 /* PupuApiController.swift */,
 			);
 			path = PupuApi;
 			sourceTree = "<group>";
@@ -197,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				A6792E6D241FD1F500197870 /* DwTabBar.swift */,
+				A61DCF65242081F50036F8DC /* IndexHeaderView.swift */,
+				A61DCF67242082CC0036F8DC /* IndexHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +415,7 @@
 				A6792E67241FC1BC00197870 /* PupuMyViewController.xib in Resources */,
 				A6C08A43241F9F7F00C6863B /* PupuIndexViewController.xib in Resources */,
 				A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */,
+				A61DCF68242082CC0036F8DC /* IndexHeaderView.xib in Resources */,
 				A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,10 +564,15 @@
 				A6792E6E241FD1F500197870 /* DwTabBar.swift in Sources */,
 				A6792E66241FC1BC00197870 /* PupuMyViewController.swift in Sources */,
 				A6792E5E241FC16600197870 /* PupuTodayHotViewController.swift in Sources */,
+				A61DCF6B2420898B0036F8DC /* DeviceUtil.swift in Sources */,
 				A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */,
 				A6792E6B241FCDA400197870 /* DwTabBarController.swift in Sources */,
+				A61DCF66242081F50036F8DC /* IndexHeaderView.swift in Sources */,
+				A6D1A10E2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift in Sources */,
+				A6D1A1102420D93C00CDEAC2 /* PupuApiController.swift in Sources */,
 				A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */,
 				A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */,
+				A6D1A1122420DA3D00CDEAC2 /* Banner.swift in Sources */,
 				A6792E62241FC18A00197870 /* PupuShopCarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
