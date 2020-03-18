@@ -34,6 +34,10 @@ class PupuIndexViewController: UIViewController {
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsContainer: UIView!
     
+    @IBOutlet weak var menuCollectionView: UICollectionView!
+    @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var mainTableView: UITableView!
     
     private var headerView: IndexHeaderView!
     private let disposeBag = DisposeBag()
@@ -59,10 +63,15 @@ class PupuIndexViewController: UIViewController {
         self.setupCategoryView()
         
         self.setupNewsView()
+        
+        self.setupMainView()
+        
+        self.setupMenuView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.menuCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .left)
     }
     
     deinit {
@@ -154,7 +163,7 @@ class PupuIndexViewController: UIViewController {
     }
     
     private func setupMainTableView() {
-        self.mainScrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height*2)
+//        self.mainScrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height*2)
         var refresherHeight:CGFloat = 40
         if DeviceUtil.isFullScreen {
             refresherHeight = 84
@@ -190,14 +199,19 @@ class PupuIndexViewController: UIViewController {
         }
         let contentOffsetY = self.mainScrollView.rx.contentOffset.map({$0.y}).share(replay: 1)
         contentOffsetY
-            .filter({ y -> Bool in
-                return y <= 0
+            .map({ y -> CGFloat in
+                if (y >= 0 ) { return 0 }//防止留缝，有时候会直接跳过
+                return y
             })
             .subscribe(onNext: {[weak self] y in
                 guard let self = self else { return }
                 self.headerView.transform = CGAffineTransform(translationX: 0, y: -y)
             }).disposed(by: disposeBag)
-        let contentOffsetYLessThan40 = contentOffsetY.filter{$0 <= 40 && $0 >= 0}
+        let contentOffsetYLessThan40 = contentOffsetY.map { offset -> CGFloat in
+            if (offset <= 0) { return 0 }
+            if (offset >= 40) { return 40 }//防止透明，有时候会直接跳过
+            return offset
+        }.distinctUntilChanged()
         
         contentOffsetYLessThan40.subscribe(onNext: { [weak self] offset in
             self?.headerView.snp.updateConstraints { make in
@@ -338,5 +352,38 @@ class PupuIndexViewController: UIViewController {
             self.newsLabel.pop_add(animation, forKey: "scroll_news")
         }
     }
+    
+    private func setupMainView() {
+        var height = UIScreen.main.bounds.height - 51.5
+        if DeviceUtil.isFullScreen {
+            height -= 22
+        }
+        self.mainViewHeight.constant = height
+        self.view.layoutIfNeeded()
+        
+        self.mainTableView.register(UINib(nibName: "HomeMainSectionTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeMainSectionTableViewCell")
+        
+        self.viewModel.mainItems.bind(to: self.mainTableView.rx.items(cellIdentifier: "HomeMainSectionTableViewCell")){ index, model, cell in
+            guard let categoryCell = cell as? HomeMainSectionTableViewCell else {return}
+        }.disposed(by: disposeBag)
+    }
+    
+    private func setupMenuView() {
+        self.menuCollectionView.register(UINib(nibName: "HomeMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeMenuCollectionViewCell")
+        self.viewModel.menuTitles
+            .bind(to: self.menuCollectionView.rx.items(cellIdentifier: "HomeMenuCollectionViewCell")){ index, model, cell in
+                guard let categoryCell = cell as? HomeMenuCollectionViewCell else {return}
+                categoryCell.titleLabel.text = model[0]
+                categoryCell.subTitleLabel.text = model[1]
+        }.disposed(by: disposeBag)
+    }
 
+}
+
+extension PupuIndexViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 526.0
+    }
+    
+    
 }

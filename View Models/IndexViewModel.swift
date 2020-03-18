@@ -25,6 +25,9 @@ class IndexViewModel {
     let bannerIndex = BehaviorRelay<Int>(value: 0)
     
     let topColor = BehaviorRelay<UIColor>(value: UIColor.white)
+    let mainItems = BehaviorRelay<[Int]>(value: [1,2,3,4,5,6,7,8,9])
+    
+    let menuTitles = BehaviorRelay<[[String]]>(value: [["精选", "好货专区"], ["限时抢购", "超值限量"], ["疯狂折扣", "天天特价"], ["新品推荐", "当季新品"], ["懒人菜单", "方便快手"], ["网红爆款", "网红系列"]])
     
     init() {
       bindOutput()

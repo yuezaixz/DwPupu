@@ -20,7 +20,7 @@ extension Reactive where Base: IndexHeaderView {
             guard let offset = offset, let searchTopToBtn = headerView.searchTopToBtnConstraint, let searchLeading = headerView.searchLeadingConstraint, let mainView = headerView.mainView, let innerView = headerView.innerTopView, let darkLocationBtn = headerView.darkLocationBtn else { return }
             searchTopToBtn.constant = -offset
             searchLeading.constant = leftPadding + offset
-            let alpha = offset/44.0
+            let alpha = offset/40.0
             innerView.alpha = 1-alpha
             darkLocationBtn.alpha = alpha
             
