@@ -12,6 +12,8 @@ import PullToRefresh
 import RxSwift
 import RxCocoa
 import Kingfisher
+import RxDataSources
+import pop
 
 class PupuIndexViewController: UIViewController {
     
@@ -25,6 +27,13 @@ class PupuIndexViewController: UIViewController {
     @IBOutlet weak var bannerInHomeHeight: NSLayoutConstraint!
     
     @IBOutlet var bannerTopViews: [UIView]!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var categoryScrollContainerView: UIView!
+    @IBOutlet weak var categoryMoreViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var newsLabel: UILabel!
+    @IBOutlet weak var newsContainer: UIView!
+    
     
     private var headerView: IndexHeaderView!
     private let disposeBag = DisposeBag()
@@ -39,11 +48,17 @@ class PupuIndexViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        self.setupBase()
+        
         self.setupMainTableView()
         
         self.setupHeaderView()
         
         self.setupBannerView()
+        
+        self.setupCategoryView()
+        
+        self.setupNewsView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +70,88 @@ class PupuIndexViewController: UIViewController {
     }
     
     // MARK: - private view setup
+    
+    private func setupBase() {
+        
+    }
+    
+    private func setupCategoryView() {
+        self.categoryCollectionView.register(UINib(nibName: "HomeCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCategoryCollectionViewCell")
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: self.categoryCollectionView.bounds.width/5, height: 90.0)
+        self.categoryCollectionView.setCollectionViewLayout(flowLayout, animated: false)
+        
+        self.viewModel.categories
+            .filter{
+                $0.count >= 8
+            }
+            .map { return Array($0[0..<8]) }
+            .bind(to: self.categoryCollectionView.rx.items(cellIdentifier: "HomeCategoryCollectionViewCell")){ index, model, cell in
+                guard let categoryCell = cell as? HomeCategoryCollectionViewCell else {return}
+                categoryCell.nameLabel.text = model.name
+                if model.imgUrl.count > 0 && model.imgUrl.range(of:"http") != nil {
+                    categoryCell.categoryImageView.kf.setImage(with: URL(string:model.imgUrl))
+                } else if model.imgUrl.count > 0 {
+                    categoryCell.categoryImageView.kf.setImage(with: URL(string: "https://imgs.static.pupumall.com/".appending(model.imgUrl)))
+                }
+        }.disposed(by: disposeBag)
+        
+        let categoryScrollView = UIScrollView()
+        categoryScrollView.showsHorizontalScrollIndicator = false
+        categoryScrollView.showsVerticalScrollIndicator = false
+        categoryScrollView.alwaysBounceVertical = false
+        categoryScrollView.alwaysBounceHorizontal = false
+        categoryScrollView.bounces = false
+        self.categoryScrollContainerView.addSubview(categoryScrollView)
+        categoryScrollView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+        }
+        let categoryMoreViewNib = UINib(nibName: "HomeCategoryMoreView", bundle: nil)
+        self.viewModel.categories
+            .filter{$0.count >= 8}
+            .subscribe(onNext: { categories in
+                guard categories.count > 8 else {return}
+                let elseCategories = Array(categories[8..<13])
+                var lastView:UIView? = nil
+                elseCategories.forEach { categoryItem in
+                    guard let categoryMoreView = categoryMoreViewNib.instantiate(withOwner: nil, options: nil)[0] as? HomeCategoryMoreView else {return}
+                    categoryScrollView.addSubview(categoryMoreView)
+                    categoryMoreView.snp.makeConstraints { make in
+                        make.height.equalTo(40)
+                        make.centerY.equalToSuperview()
+                    }
+                    categoryMoreView.nameLabel.text = categoryItem.name
+                    if categoryItem.imgUrl.count > 0 && categoryItem.imgUrl.range(of:"http") != nil {
+                        categoryMoreView.categoryImageView.kf.setImage(with: URL(string:categoryItem.imgUrl))
+                    } else if categoryItem.imgUrl.count > 0 {
+                        categoryMoreView.categoryImageView.kf.setImage(with: URL(string: "https://imgs.static.pupumall.com/".appending(categoryItem.imgUrl)))
+                    }
+                    
+                    if let lastView = lastView {
+                        categoryMoreView.snp.makeConstraints { make in
+                            make.left.equalTo(lastView.snp.right).offset(7)
+                        }
+                    } else {
+                        categoryMoreView.snp.makeConstraints { make in
+                            make.left.equalToSuperview().offset(20)
+                        }
+                    }
+                    
+                    lastView = categoryMoreView
+                }
+                
+                if let moreView = categoryMoreViewNib.instantiate(withOwner: nil, options: nil)[0] as? HomeCategoryMoreView, let lastView = lastView {
+                    categoryScrollView.addSubview(moreView)
+                    moreView.backgroundColor = UIColor(hex: "#FFE092")
+                    moreView.snp.makeConstraints { make in
+                        make.left.equalTo(lastView.snp.right).offset(7)
+                        make.right.equalToSuperview().offset(-20)
+                        make.height.equalTo(40)
+                        make.centerY.equalToSuperview()
+                    }
+                }
+            }).disposed(by: disposeBag)
+    }
     
     private func setupMainTableView() {
         self.mainScrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height*2)
@@ -77,6 +174,8 @@ class PupuIndexViewController: UIViewController {
     private func setupHeaderView() {
         headerView = Bundle.main.loadNibNamed("IndexHeaderView", owner: nil, options: nil)?[0] as? IndexHeaderView
         self.view.addSubview(headerView)
+        
+        viewModel.title.asDriver(onErrorJustReturn: "").drive(headerView.searchBtn.rx.title(for: .normal)).disposed(by: disposeBag)
         
         headerView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -142,7 +241,7 @@ class PupuIndexViewController: UIViewController {
         viewModel.banners
             .filter({  $0.count > 0 })
             .map({ banners in
-                return Array(banners.filter{$0.bgColor.count > 0}[0..<8]).map{$0.imgUrl}
+                return Array(banners.filter{$0.bgColor.count > 0}[0..<min(banners.count, 8)]).map{$0.imgUrl}
             }).subscribe(onNext: { [weak self] images in
                 guard let self = self else { return }
                 self.bannerContainerView.subviews.forEach({ view in
@@ -206,6 +305,38 @@ class PupuIndexViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         
+    }
+    
+    private func setupNewsView() {
+        let duration = 5.0
+        let newsHeight = self.newsLabel.bounds.height*1.5
+        self.newsContainer.layer.borderColor = UIColor(hex: "#FFEBD1").cgColor
+        self.newsContainer.layer.borderWidth = 1.0
+        
+        if let animation = POPCustomAnimation(block: {[weak self] (target, animation) -> Bool in
+            guard let self = self, let animation = animation else { return false }
+                        
+            var progress = (Double(animation.currentTime).truncatingRemainder(dividingBy: duration))/duration
+            
+            if progress >= 0.5 {
+                self.newsLabel.text = "可配送时间：7:00 ~ 22:30 >"
+                progress -= 0.5
+            } else {
+                self.newsLabel.text = "龙虾帝王蟹...高级海鲜售卖中 >"
+            }
+            
+            if progress > 0.2 {
+                progress = 0.2
+            }
+            
+            progress *= 5
+            
+            self.newsLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(1-progress)*newsHeight)
+            
+            return true
+        }) {
+            self.newsLabel.pop_add(animation, forKey: "scroll_news")
+        }
     }
 
 }

@@ -127,6 +127,7 @@
                 <outlet property="darkLocationBtn" destination="QZ5-rr-14E" id="PyZ-7P-EnM"/>
                 <outlet property="innerTopView" destination="UnG-17-Sde" id="I3k-cf-uEf"/>
                 <outlet property="mainView" destination="QTK-Zx-uWR" id="Eh3-1z-N6I"/>
+                <outlet property="searchBtn" destination="nL3-OD-cku" id="mrG-y6-pfB"/>
                 <outlet property="searchLeadingConstraint" destination="ena-im-wrj" id="aP3-BA-x4p"/>
                 <outlet property="searchTopToBtnConstraint" destination="GQy-hk-Oif" id="5Hv-0j-3L8"/>
             </connections>

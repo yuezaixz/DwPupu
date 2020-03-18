@@ -16,5 +16,6 @@ class IndexHeaderView: UIView {
     @IBOutlet weak var innerTopView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var darkLocationBtn: UIButton!
+    @IBOutlet weak var searchBtn: UIButton!
     
 }

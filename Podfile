@@ -17,6 +17,7 @@ abstract_target 'DwPupuAbstract' do
     pod 'PullToRefresher'
     pod 'Kingfisher'
     pod 'Hue'
+    pod 'pop'
 
     target 'DwPupu' do
         platform :ios, '10.0'
