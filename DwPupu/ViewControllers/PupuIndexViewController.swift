@@ -329,9 +329,10 @@ class PupuIndexViewController: UIViewController {
                 self.bannerContainerView.addSubview(autoScrollView)
 
                 //设置LTDotLayout，更多dot使用见LTDotLayout属性说明
-//                let layout = LTDotLayout(dotImage: dotImage, dotSelectImage: dotSelectImage)
-//                layout.dotMargin = 10.0
-//                autoScrollView.dotLayout = layout
+                let layout = LTDotLayout(dotWidth: 15, dotHeight: 2, dotCornerRadius: 1.0, dotColor: UIColor(white: 1.0, alpha: 0.4), dotSelectColor: UIColor(white: 1.0, alpha: 0.8))
+                layout.dotMargin = 10.0
+                
+                autoScrollView.dotLayout = layout
             }).disposed(by: disposeBag)
         
         

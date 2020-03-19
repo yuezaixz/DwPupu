@@ -474,6 +474,8 @@ public class LTDotLayout: NSObject {
     public var dotWidth: CGFloat = isPostDotSize
     /* dot单独的一个的高度 */
     public var dotHeight: CGFloat = isPostDotSize
+    /* dot未选中的图片 */
+    public var dotCornerRadius: CGFloat?
     /* dot之间的间距 */
     public var dotMargin: CGFloat = 15.0
     /* dot未选中的图片 */
@@ -491,10 +493,11 @@ public class LTDotLayout: NSObject {
     /* 滚动过程dot放大倍率 */
     public var scaleXY: CGFloat = 1.4
     public override init() { super.init() }
-    public convenience init(dotWidth: CGFloat = 14.999099, dotHeight: CGFloat = 14.999099, dotMargin: CGFloat = 15.0, dotImage: UIImage? = nil, dotSelectImage: UIImage? = nil, dotColor: UIColor = UIColor.clear, dotSelectColor: UIColor = UIColor.clear, dotType: LTAutoScrollViewType = .custom, isScale: Bool = true, scaleXY: CGFloat = 1.4) {
+    public convenience init(dotWidth: CGFloat = 14.999099, dotHeight: CGFloat = 14.999099, dotMargin: CGFloat = 15.0, dotCornerRadius:CGFloat? = nil , dotImage: UIImage? = nil, dotSelectImage: UIImage? = nil, dotColor: UIColor = UIColor.clear, dotSelectColor: UIColor = UIColor.clear, dotType: LTAutoScrollViewType = .custom, isScale: Bool = true, scaleXY: CGFloat = 1.4) {
         self.init()
         self.dotWidth = dotWidth
         self.dotHeight = dotHeight
+        self.dotCornerRadius = dotCornerRadius
         self.dotMargin = dotMargin
         self.dotImage = dotImage
         self.dotSelectImage = dotSelectImage
@@ -639,6 +642,11 @@ extension LTPageControlView {
             imageH = dotLayout.dotHeight
         }
         dotView.frame = CGRect(x: (imageW + dotLayout.dotMargin) * CGFloat(index), y: (bounds.height - imageH) / 2.0, width: imageW, height: imageH)
+        if let dotCornerRadius = dotLayout.dotCornerRadius {
+            dotView.layer.cornerRadius = dotCornerRadius
+            dotView.layer.masksToBounds = true
+            dotView.clipsToBounds = true
+        }
     }
     
     private func glt_createGesture(dotView: UIImageView) {
