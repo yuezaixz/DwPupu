@@ -12,6 +12,7 @@
 		A61DCF66242081F50036F8DC /* IndexHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61DCF65242081F50036F8DC /* IndexHeaderView.swift */; };
 		A61DCF68242082CC0036F8DC /* IndexHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61DCF67242082CC0036F8DC /* IndexHeaderView.xib */; };
 		A61DCF6B2420898B0036F8DC /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */; };
+		A6682CB42423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682CB32423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift */; };
 		A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E58241FC14600197870 /* PupuCategoryViewController.swift */; };
 		A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6792E59241FC14600197870 /* PupuCategoryViewController.xib */; };
 		A6792E5E241FC16600197870 /* PupuTodayHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E5C241FC16600197870 /* PupuTodayHotViewController.swift */; };
@@ -86,6 +87,7 @@
 		A61DCF65242081F50036F8DC /* IndexHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexHeaderView.swift; sourceTree = "<group>"; };
 		A61DCF67242082CC0036F8DC /* IndexHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexHeaderView.xib; sourceTree = "<group>"; };
 		A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
+		A6682CB32423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwAutoCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		A6792E57241FB9BC00197870 /* Arial Narrow Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Bold.ttf"; sourceTree = "<group>"; };
 		A6792E58241FC14600197870 /* PupuCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuCategoryViewController.swift; sourceTree = "<group>"; };
 		A6792E59241FC14600197870 /* PupuCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuCategoryViewController.xib; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			children = (
 				A6D1A1142421092800CDEAC2 /* LTAutoScrollView.swift */,
 				A6D1A13C2423119100CDEAC2 /* DwMultiResponseScrollView.swift */,
+				A6682CB32423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				A6D1A13F2423140700CDEAC2 /* ScreenUtil.swift in Sources */,
 				A61DCF6B2420898B0036F8DC /* DeviceUtil.swift in Sources */,
 				A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */,
+				A6682CB42423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift in Sources */,
 				A6792E6B241FCDA400197870 /* DwTabBarController.swift in Sources */,
 				A6D1A1362422445500CDEAC2 /* HomeMenuCollectionViewCell.swift in Sources */,
 				A6D1A1422423213700CDEAC2 /* HomeMainTableViewController.swift in Sources */,

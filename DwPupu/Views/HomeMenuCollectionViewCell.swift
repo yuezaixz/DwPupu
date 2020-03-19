@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeMenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    
+    var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +24,7 @@ class HomeMenuCollectionViewCell: UICollectionViewCell {
         self.normalizeCell()
         self.titleLabel.text = ""
         self.subTitleLabel.text = ""
+        self.disposeBag = DisposeBag()
     }
     
     override var isSelected: Bool {

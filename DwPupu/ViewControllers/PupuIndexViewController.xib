@@ -19,9 +19,11 @@
                 <outlet property="categoryScrollContainerView" destination="aGO-fo-8Da" id="FeZ-ie-i2q"/>
                 <outlet property="mainScrollView" destination="4Gv-Lw-gxH" id="euk-L3-imI"/>
                 <outlet property="mainTableViewContainer" destination="suC-c9-GSx" id="2wl-lc-mkK"/>
+                <outlet property="mainTableViewHeight" destination="fan-TE-iP8" id="Bx8-aI-jSp"/>
                 <outlet property="mainView" destination="fS8-n9-7Qf" id="EQF-On-mDJ"/>
-                <outlet property="mainViewHeight" destination="Izt-qG-2Tb" id="985-dE-SPg"/>
                 <outlet property="menuCollectionView" destination="hcb-IM-2th" id="C9c-Y5-YiB"/>
+                <outlet property="menuHeight" destination="UNb-bj-j5x" id="t93-V0-SvM"/>
+                <outlet property="menuView" destination="hyT-5T-VMi" id="ZWm-2s-JsP"/>
                 <outlet property="newsContainer" destination="yxK-AB-Hgq" id="pSN-Ld-dkd"/>
                 <outlet property="newsLabel" destination="Qdg-gv-ndO" id="Lu0-IZ-sxU"/>
                 <outlet property="scrollContainerView" destination="Ksp-pn-zhA" id="6pf-fT-c6o"/>
@@ -339,6 +341,13 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS8-n9-7Qf">
                                     <rect key="frame" x="0.0" y="915" width="414" height="398"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suC-c9-GSx">
+                                            <rect key="frame" x="0.0" y="58" width="414" height="340"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="340" id="fan-TE-iP8"/>
+                                            </constraints>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-5T-VMi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <subviews>
@@ -347,6 +356,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZqF-jX-PWN">
                                                         <size key="itemSize" width="95" height="58"/>
+                                                        <size key="estimatedItemSize" width="95" height="58"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -362,10 +372,6 @@
                                                 <constraint firstItem="hcb-IM-2th" firstAttribute="leading" secondItem="hyT-5T-VMi" secondAttribute="leading" id="x7n-R9-FVs"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suC-c9-GSx">
-                                            <rect key="frame" x="0.0" y="58" width="414" height="340"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
@@ -373,7 +379,6 @@
                                         <constraint firstItem="hyT-5T-VMi" firstAttribute="leading" secondItem="fS8-n9-7Qf" secondAttribute="leading" id="ASd-8k-mDT"/>
                                         <constraint firstAttribute="trailing" secondItem="suC-c9-GSx" secondAttribute="trailing" id="DIG-2H-nxk"/>
                                         <constraint firstAttribute="bottom" secondItem="suC-c9-GSx" secondAttribute="bottom" id="Gz9-Ym-8EW"/>
-                                        <constraint firstAttribute="height" constant="398" id="Izt-qG-2Tb"/>
                                         <constraint firstItem="suC-c9-GSx" firstAttribute="top" secondItem="hyT-5T-VMi" secondAttribute="bottom" id="WIr-nt-Xyo"/>
                                         <constraint firstItem="suC-c9-GSx" firstAttribute="leading" secondItem="fS8-n9-7Qf" secondAttribute="leading" id="XnU-BV-hfP"/>
                                         <constraint firstItem="hyT-5T-VMi" firstAttribute="top" secondItem="fS8-n9-7Qf" secondAttribute="top" id="c19-hq-zcW"/>

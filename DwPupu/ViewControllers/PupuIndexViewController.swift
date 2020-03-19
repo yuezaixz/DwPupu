@@ -34,8 +34,10 @@ class PupuIndexViewController: UIViewController {
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsContainer: UIView!
     
+    @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
-    @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var menuHeight: NSLayoutConstraint!
+    @IBOutlet weak var mainTableViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var mainView: UIView!
     
@@ -372,35 +374,59 @@ class PupuIndexViewController: UIViewController {
         if DeviceUtil.isFullScreen {
             height -= 22
         }
-        self.mainViewHeight.constant = height
+        height -= 30
+        self.mainTableViewHeight.constant = height
         
-        self.setupSubControllers()
+        self.setupSubControllers(height)
     }
     
     private func setupMenuView() {
+        
+        self.menuView.layer.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.1).cgColor
+        self.menuView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.menuView.layer.shadowRadius = 8.0
+        self.menuView.layer.shadowOpacity = 1.0
+        
         self.menuCollectionView.register(UINib(nibName: "HomeMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeMenuCollectionViewCell")
+        let flowLayout = DwAutoCollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: 95, height: 58.0)
+        flowLayout.scrollDirection = .horizontal
+        
+        self.menuCollectionView.setCollectionViewLayout(flowLayout, animated: false)
+        
+        let menuOffsetObservable = self.mainScrollView.rx.contentOffset.map{$0.y}
+            .map { [weak self] offsetY -> CGFloat in
+                guard let self = self else { return 0.0 }
+                let result = offsetY - self.maxOffset + 28.0
+                return 58.0 - max(min(result, 28), 0)
+        }.do(onNext: { [weak self] offsetY in
+            self?.menuView.layer.shadowOpacity = 1.0 - Float((offsetY-30)/28)
+            flowLayout.estimatedItemSize = CGSize(width: 95, height: offsetY)
+        }).share()
+        menuOffsetObservable.bind(to: self.menuHeight.rx.constant).disposed(by: disposeBag)
+        
         self.viewModel.menuTitles
             .bind(to: self.menuCollectionView.rx.items(cellIdentifier: "HomeMenuCollectionViewCell")){ index, model, cell in
                 guard let categoryCell = cell as? HomeMenuCollectionViewCell else {return}
                 categoryCell.titleLabel.text = model[0]
                 categoryCell.subTitleLabel.text = model[1]
+                menuOffsetObservable.map{($0-30)/28}.bind(to: categoryCell.subTitleLabel.rx.alpha).disposed(by: categoryCell.disposeBag)
         }.disposed(by: disposeBag)
         
         
     }
     
-    private func setupSubControllers() {
+    private func setupSubControllers(_ mainViewHeight:CGFloat) {
         let containerScrollView = UIScrollView()
         self.containerScrollView = containerScrollView
         containerScrollView.isScrollEnabled = false
         self.mainTableViewContainer.addSubview(containerScrollView)
         let menuHeight = self.menuCollectionView.bounds.height
-        let height = DwScreen.height - menuHeight - DwScreen.statusBarHeight
-        containerScrollView.contentSize = CGSize(width: DwScreen.width * 2, height: height)
+        containerScrollView.contentSize = CGSize(width: DwScreen.width * 2, height: mainViewHeight)
         containerScrollView.snp.makeConstraints { (make) in
             make.leading.bottom.top.left.equalTo(0)
             make.width.equalTo(DwScreen.width)
-            make.height.equalTo(height)
+            make.height.equalToSuperview()
 
         }
 
