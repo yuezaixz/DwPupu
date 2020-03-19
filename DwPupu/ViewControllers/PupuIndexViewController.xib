@@ -18,7 +18,8 @@
                 <outlet property="categoryMoreViewHeight" destination="Hxs-CU-7au" id="xcD-6d-cox"/>
                 <outlet property="categoryScrollContainerView" destination="aGO-fo-8Da" id="FeZ-ie-i2q"/>
                 <outlet property="mainScrollView" destination="4Gv-Lw-gxH" id="euk-L3-imI"/>
-                <outlet property="mainTableView" destination="n2X-WV-jXo" id="WsV-xb-PwB"/>
+                <outlet property="mainTableViewContainer" destination="suC-c9-GSx" id="2wl-lc-mkK"/>
+                <outlet property="mainView" destination="fS8-n9-7Qf" id="EQF-On-mDJ"/>
                 <outlet property="mainViewHeight" destination="Izt-qG-2Tb" id="985-dE-SPg"/>
                 <outlet property="menuCollectionView" destination="hcb-IM-2th" id="C9c-Y5-YiB"/>
                 <outlet property="newsContainer" destination="yxK-AB-Hgq" id="pSN-Ld-dkd"/>
@@ -36,7 +37,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-Lw-gxH">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-Lw-gxH" customClass="DwMultiResponseScrollView" customModule="朴朴" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksp-pn-zhA">
@@ -338,13 +339,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS8-n9-7Qf">
                                     <rect key="frame" x="0.0" y="915" width="414" height="398"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n2X-WV-jXo">
-                                            <rect key="frame" x="0.0" y="58" width="414" height="340"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="r2O-At-wyX"/>
-                                            </connections>
-                                        </tableView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-5T-VMi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <subviews>
@@ -368,17 +362,21 @@
                                                 <constraint firstItem="hcb-IM-2th" firstAttribute="leading" secondItem="hyT-5T-VMi" secondAttribute="leading" id="x7n-R9-FVs"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suC-c9-GSx">
+                                            <rect key="frame" x="0.0" y="58" width="414" height="340"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="hyT-5T-VMi" secondAttribute="trailing" id="AJD-uo-2hA"/>
                                         <constraint firstItem="hyT-5T-VMi" firstAttribute="leading" secondItem="fS8-n9-7Qf" secondAttribute="leading" id="ASd-8k-mDT"/>
+                                        <constraint firstAttribute="trailing" secondItem="suC-c9-GSx" secondAttribute="trailing" id="DIG-2H-nxk"/>
+                                        <constraint firstAttribute="bottom" secondItem="suC-c9-GSx" secondAttribute="bottom" id="Gz9-Ym-8EW"/>
                                         <constraint firstAttribute="height" constant="398" id="Izt-qG-2Tb"/>
-                                        <constraint firstItem="n2X-WV-jXo" firstAttribute="top" secondItem="hyT-5T-VMi" secondAttribute="bottom" id="KDj-KF-P2h"/>
-                                        <constraint firstAttribute="trailing" secondItem="n2X-WV-jXo" secondAttribute="trailing" id="UsX-8m-BcC"/>
-                                        <constraint firstAttribute="bottom" secondItem="n2X-WV-jXo" secondAttribute="bottom" id="Y2Q-tb-jhB"/>
+                                        <constraint firstItem="suC-c9-GSx" firstAttribute="top" secondItem="hyT-5T-VMi" secondAttribute="bottom" id="WIr-nt-Xyo"/>
+                                        <constraint firstItem="suC-c9-GSx" firstAttribute="leading" secondItem="fS8-n9-7Qf" secondAttribute="leading" id="XnU-BV-hfP"/>
                                         <constraint firstItem="hyT-5T-VMi" firstAttribute="top" secondItem="fS8-n9-7Qf" secondAttribute="top" id="c19-hq-zcW"/>
-                                        <constraint firstItem="n2X-WV-jXo" firstAttribute="leading" secondItem="fS8-n9-7Qf" secondAttribute="leading" id="eeN-Au-OPO"/>
                                     </constraints>
                                 </view>
                             </subviews>

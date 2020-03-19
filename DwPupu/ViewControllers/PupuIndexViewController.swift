@@ -17,7 +17,7 @@ import pop
 
 class PupuIndexViewController: UIViewController {
     
-    @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak var mainScrollView: DwMultiResponseScrollView!
     @IBOutlet weak var scrollContainerView: UIView!
     
     @IBOutlet weak var bannerInHomeView: UIView!
@@ -37,11 +37,24 @@ class PupuIndexViewController: UIViewController {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var mainView: UIView!
+    
+    @IBOutlet weak var mainTableViewContainer: UIView!
+    private var containerScrollView: UIScrollView!
     
     private var headerView: IndexHeaderView!
     private let disposeBag = DisposeBag()
     fileprivate var viewModel: IndexViewModel!
+    
+    var superCanScroll = true
+    private var currentMainViewController:HomeMainTableViewController!
+    weak var firstViewController: HomeMainTableViewController!
+    weak var secondViewController: HomeMainTableViewController!
+    
+    var maxOffset: CGFloat {
+        self.mainView.frame.origin.y - self.headerView.bounds.height
+//        self.mainScrollView.contentSize.height - self.mainViewHeight.constant - DwScreen.statusBarHeight
+    }
     
     // MARK: - live cycle
     
@@ -169,6 +182,7 @@ class PupuIndexViewController: UIViewController {
             refresherHeight = 84
         }
         let refresher = PullToRefresh(height: refresherHeight, position: .top)
+        self.mainScrollView.delegate = self
         self.mainScrollView.addPullToRefresh(refresher) {
             // action to be performed (pull data from some source)
             DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
@@ -359,13 +373,8 @@ class PupuIndexViewController: UIViewController {
             height -= 22
         }
         self.mainViewHeight.constant = height
-        self.view.layoutIfNeeded()
         
-        self.mainTableView.register(UINib(nibName: "HomeMainSectionTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeMainSectionTableViewCell")
-        
-        self.viewModel.mainItems.bind(to: self.mainTableView.rx.items(cellIdentifier: "HomeMainSectionTableViewCell")){ index, model, cell in
-            guard let categoryCell = cell as? HomeMainSectionTableViewCell else {return}
-        }.disposed(by: disposeBag)
+        self.setupSubControllers()
     }
     
     private func setupMenuView() {
@@ -376,13 +385,74 @@ class PupuIndexViewController: UIViewController {
                 categoryCell.titleLabel.text = model[0]
                 categoryCell.subTitleLabel.text = model[1]
         }.disposed(by: disposeBag)
+        
+        
+    }
+    
+    private func setupSubControllers() {
+        let containerScrollView = UIScrollView()
+        self.containerScrollView = containerScrollView
+        containerScrollView.isScrollEnabled = false
+        self.mainTableViewContainer.addSubview(containerScrollView)
+        let menuHeight = self.menuCollectionView.bounds.height
+        let height = DwScreen.height - menuHeight - DwScreen.statusBarHeight
+        containerScrollView.contentSize = CGSize(width: DwScreen.width * 2, height: height)
+        containerScrollView.snp.makeConstraints { (make) in
+            make.leading.bottom.top.left.equalTo(0)
+            make.width.equalTo(DwScreen.width)
+            make.height.equalTo(height)
+
+        }
+
+        let first = HomeMainTableViewController()
+        self.firstViewController = first
+        self.addChild(first)
+        containerScrollView.addSubview(first.view)
+        first.view.snp.makeConstraints { (make) in
+            make.leading.top.bottom.equalTo(0)
+            make.height.equalTo(DwScreen.height - menuHeight - DwScreen.statusBarHeight)
+            make.width.equalTo(DwScreen.width)
+        }
+
+        let second = HomeMainTableViewController()
+        self.secondViewController = second
+        self.addChild(second)
+        containerScrollView.addSubview(second.view)
+        second.view.snp.makeConstraints { (make) in
+            make.leading.equalTo(DwScreen.width)
+            make.top.bottom.equalTo(0)
+            make.width.equalTo(DwScreen.width)
+            make.height.equalTo(DwScreen.height - menuHeight - DwScreen.statusBarHeight)
+        }
+        currentMainViewController = firstViewController
+
+        first.superCanScrollBlock = { [weak self] (canScroll) in
+            self?.superCanScroll = canScroll
+        }
+        second.superCanScrollBlock = { [weak self] (canScroll) in
+            self?.superCanScroll = canScroll
+        }
     }
 
 }
 
 extension PupuIndexViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 526.0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !superCanScroll {
+            scrollView.contentOffset.y = maxOffset
+            self.currentMainViewController.childCanScroll = true
+        } else {
+            if scrollView.contentOffset.y >= maxOffset {
+                scrollView.contentOffset.y = maxOffset
+                superCanScroll = false
+                self.currentMainViewController.childCanScroll = true
+            }
+        }
     }
     
     

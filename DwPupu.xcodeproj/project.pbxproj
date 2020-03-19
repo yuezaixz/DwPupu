@@ -49,6 +49,10 @@
 		A6D1A1372422445500CDEAC2 /* HomeMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D1A1352422445400CDEAC2 /* HomeMenuCollectionViewCell.xib */; };
 		A6D1A13A24225B4900CDEAC2 /* HomeMainSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A13824225B4900CDEAC2 /* HomeMainSectionTableViewCell.swift */; };
 		A6D1A13B24225B4900CDEAC2 /* HomeMainSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D1A13924225B4900CDEAC2 /* HomeMainSectionTableViewCell.xib */; };
+		A6D1A13D2423119200CDEAC2 /* DwMultiResponseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A13C2423119100CDEAC2 /* DwMultiResponseScrollView.swift */; };
+		A6D1A13F2423140700CDEAC2 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A13E2423140700CDEAC2 /* ScreenUtil.swift */; };
+		A6D1A1422423213700CDEAC2 /* HomeMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A1402423213700CDEAC2 /* HomeMainTableViewController.swift */; };
+		A6D1A1432423213700CDEAC2 /* HomeMainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D1A1412423213700CDEAC2 /* HomeMainTableViewController.xib */; };
 		CBED216E23EF849A5E0CEB8F /* Pods_DwPupuAbstract_DwPupuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A80CE46165BFCA6CFB59F9 /* Pods_DwPupuAbstract_DwPupuUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +130,10 @@
 		A6D1A1352422445400CDEAC2 /* HomeMenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		A6D1A13824225B4900CDEAC2 /* HomeMainSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainSectionTableViewCell.swift; sourceTree = "<group>"; };
 		A6D1A13924225B4900CDEAC2 /* HomeMainSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMainSectionTableViewCell.xib; sourceTree = "<group>"; };
+		A6D1A13C2423119100CDEAC2 /* DwMultiResponseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwMultiResponseScrollView.swift; sourceTree = "<group>"; };
+		A6D1A13E2423140700CDEAC2 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
+		A6D1A1402423213700CDEAC2 /* HomeMainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainTableViewController.swift; sourceTree = "<group>"; };
+		A6D1A1412423213700CDEAC2 /* HomeMainTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMainTableViewController.xib; sourceTree = "<group>"; };
 		BAF82E91E03B0BFE17688284 /* Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7211F44D6C1C27CD618159F /* Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuAbstract-DwPupuUITests/Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D89982A8DE577919D97C85F8 /* Pods-DwPupuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwPupuTests.debug.xcconfig"; path = "Target Support Files/Pods-DwPupuTests/Pods-DwPupuTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */,
+				A6D1A13E2423140700CDEAC2 /* ScreenUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -212,6 +221,8 @@
 				A6792E61241FC18A00197870 /* PupuShopCarViewController.xib */,
 				A6792E64241FC1BC00197870 /* PupuMyViewController.swift */,
 				A6792E65241FC1BC00197870 /* PupuMyViewController.xib */,
+				A6D1A1402423213700CDEAC2 /* HomeMainTableViewController.swift */,
+				A6D1A1412423213700CDEAC2 /* HomeMainTableViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -336,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D1A1142421092800CDEAC2 /* LTAutoScrollView.swift */,
+				A6D1A13C2423119100CDEAC2 /* DwMultiResponseScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -503,6 +515,7 @@
 				A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */,
 				A6D1A11F2421C04F00CDEAC2 /* HomeCategoryCollectionViewCell.xib in Resources */,
 				A6D1A1332422062800CDEAC2 /* storeproduct.json in Resources */,
+				A6D1A1432423213700CDEAC2 /* HomeMainTableViewController.xib in Resources */,
 				A61DCF68242082CC0036F8DC /* IndexHeaderView.xib in Resources */,
 				A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */,
 			);
@@ -655,15 +668,18 @@
 				A6792E5E241FC16600197870 /* PupuTodayHotViewController.swift in Sources */,
 				A6D1A1212421C14F00CDEAC2 /* HomeCategoryMoreView.swift in Sources */,
 				A6D1A13A24225B4900CDEAC2 /* HomeMainSectionTableViewCell.swift in Sources */,
+				A6D1A13F2423140700CDEAC2 /* ScreenUtil.swift in Sources */,
 				A61DCF6B2420898B0036F8DC /* DeviceUtil.swift in Sources */,
 				A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */,
 				A6792E6B241FCDA400197870 /* DwTabBarController.swift in Sources */,
 				A6D1A1362422445500CDEAC2 /* HomeMenuCollectionViewCell.swift in Sources */,
+				A6D1A1422423213700CDEAC2 /* HomeMainTableViewController.swift in Sources */,
 				A61DCF66242081F50036F8DC /* IndexHeaderView.swift in Sources */,
 				A6D1A10E2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift in Sources */,
 				A6D1A1102420D93C00CDEAC2 /* PupuApiController.swift in Sources */,
 				A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */,
 				A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */,
+				A6D1A13D2423119200CDEAC2 /* DwMultiResponseScrollView.swift in Sources */,
 				A6D1A11B2421B08800CDEAC2 /* Category.swift in Sources */,
 				A6D1A1122420DA3D00CDEAC2 /* Banner.swift in Sources */,
 				A6D1A119242119B900CDEAC2 /* LTAutoScrollView+Rx.swift in Sources */,
