@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Then
 
 class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Properties
@@ -35,22 +36,29 @@ class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 50
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        tableView.allowsSelection = false
+        tableView.separatorStyle = .none
+        
+        tableView.register(UINib(nibName: "HomeShopRecommendBlickTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeShopRecommendBlickTableViewCell")
     }
 
     // MARK: - TableView Delegate/DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 40
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 270
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 270
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-            return UITableViewCell()
+        return tableView.dequeueCell(ofType: HomeShopRecommendBlickTableViewCell.self).then { cell in
+            cell.setup()
         }
-        cell.textLabel?.text = "First:\(indexPath.row)"
-        cell.selectionStyle = .none
-        return cell
     }
 
     // MARK: - ScrollViewDelegate
