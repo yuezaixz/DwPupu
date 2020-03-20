@@ -16,23 +16,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123123123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-oW-KXz">
-                        <rect key="frame" x="118" y="16" width="84" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROk-E7-ckx">
+                        <rect key="frame" x="29" y="53" width="240" height="203"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YaZ-Cd-1dM">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="62"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="moS-Us-m13"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uej-E5-jMp">
+                                <rect key="frame" x="39" y="77" width="163" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="mTM-Gw-piz"/>
+                            <constraint firstItem="YaZ-Cd-1dM" firstAttribute="leading" secondItem="ROk-E7-ckx" secondAttribute="leading" id="GyS-ES-B9D"/>
+                            <constraint firstAttribute="trailing" secondItem="YaZ-Cd-1dM" secondAttribute="trailing" id="HB7-HJ-XWL"/>
+                            <constraint firstAttribute="width" constant="240" id="iI1-wK-40U"/>
+                            <constraint firstItem="YaZ-Cd-1dM" firstAttribute="top" secondItem="ROk-E7-ckx" secondAttribute="top" id="rFg-ut-hL6"/>
+                            <constraint firstAttribute="height" constant="203" id="yVx-Ul-0hd"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wvl-oW-KXz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ttv-ce-XFU"/>
-                    <constraint firstItem="wvl-oW-KXz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="efx-EA-0dI"/>
+                    <constraint firstItem="ROk-E7-ckx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="907-1J-UeA"/>
+                    <constraint firstItem="ROk-E7-ckx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="42" id="uTd-Ga-2jU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="132" y="111"/>
+            <point key="canvasLocation" x="131.8840579710145" y="110.49107142857143"/>
         </tableViewCell>
     </objects>
 </document>

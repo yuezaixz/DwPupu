@@ -16,6 +16,8 @@
 		A6682CBC2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682CBA2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift */; };
 		A6682CBD2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6682CBB2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib */; };
 		A6682CC02423CA5100989FA7 /* TableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682CBF2423CA5100989FA7 /* TableView+.swift */; };
+		A6682CC22424C6FE00989FA7 /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682CC12424C6FE00989FA7 /* HomeItem.swift */; };
+		A6682CC42424C72200989FA7 /* HomeSubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682CC32424C72200989FA7 /* HomeSubItem.swift */; };
 		A6792E5A241FC14600197870 /* PupuCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E58241FC14600197870 /* PupuCategoryViewController.swift */; };
 		A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6792E59241FC14600197870 /* PupuCategoryViewController.xib */; };
 		A6792E5E241FC16600197870 /* PupuTodayHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6792E5C241FC16600197870 /* PupuTodayHotViewController.swift */; };
@@ -94,6 +96,8 @@
 		A6682CBA2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopRecommendBlickTableViewCell.swift; sourceTree = "<group>"; };
 		A6682CBB2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeShopRecommendBlickTableViewCell.xib; sourceTree = "<group>"; };
 		A6682CBF2423CA5100989FA7 /* TableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+.swift"; sourceTree = "<group>"; };
+		A6682CC12424C6FE00989FA7 /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
+		A6682CC32424C72200989FA7 /* HomeSubItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubItem.swift; sourceTree = "<group>"; };
 		A6792E57241FB9BC00197870 /* Arial Narrow Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Bold.ttf"; sourceTree = "<group>"; };
 		A6792E58241FC14600197870 /* PupuCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuCategoryViewController.swift; sourceTree = "<group>"; };
 		A6792E59241FC14600197870 /* PupuCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuCategoryViewController.xib; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 			children = (
 				A6D1A1112420DA3D00CDEAC2 /* Banner.swift */,
 				A6D1A11A2421B08800CDEAC2 /* Category.swift */,
+				A6682CC12424C6FE00989FA7 /* HomeItem.swift */,
+				A6682CC32424C72200989FA7 /* HomeSubItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -704,6 +710,7 @@
 				A6682CB42423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift in Sources */,
 				A6792E6B241FCDA400197870 /* DwTabBarController.swift in Sources */,
 				A6D1A1362422445500CDEAC2 /* HomeMenuCollectionViewCell.swift in Sources */,
+				A6682CC22424C6FE00989FA7 /* HomeItem.swift in Sources */,
 				A6D1A1422423213700CDEAC2 /* HomeMainTableViewController.swift in Sources */,
 				A6682CBC2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift in Sources */,
 				A61DCF66242081F50036F8DC /* IndexHeaderView.swift in Sources */,
@@ -713,6 +720,7 @@
 				A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */,
 				A6D1A13D2423119200CDEAC2 /* DwMultiResponseScrollView.swift in Sources */,
 				A6D1A11B2421B08800CDEAC2 /* Category.swift in Sources */,
+				A6682CC42424C72200989FA7 /* HomeSubItem.swift in Sources */,
 				A6D1A1122420DA3D00CDEAC2 /* Banner.swift in Sources */,
 				A6D1A119242119B900CDEAC2 /* LTAutoScrollView+Rx.swift in Sources */,
 				A6D1A1152421092800CDEAC2 /* LTAutoScrollView.swift in Sources */,

@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 inhibit_all_warnings!
 
 abstract_target 'DwPupuAbstract' do
-    pod 'Alamofire'
+    pod 'Alamofire', '4.8.2'
 
     pod 'RxSwift', '4.4.1'
     pod 'RxCocoa', '4.4.1'
@@ -15,9 +15,10 @@ abstract_target 'DwPupuAbstract' do
     pod 'RxRealmDataSources', '0.2.10'
     pod 'SnapKit', '~> 5.0.0'
     pod 'PullToRefresher'
-    pod 'Kingfisher'
+    pod 'Kingfisher', '5.3.1'
     pod 'Hue'
     pod 'pop'
+    pod 'HandyJSON'
 
     target 'DwPupu' do
         platform :ios, '10.0'

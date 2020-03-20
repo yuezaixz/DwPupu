@@ -8,6 +8,8 @@
 
 import UIKit
 import Then
+import RxSwift
+import RxCocoa
 
 class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Properties
@@ -15,6 +17,15 @@ class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     var childCanScroll = false
     var superCanScrollBlock: ((Bool) -> Void)?
+    
+    var homeItems = BehaviorRelay<[HomeItem]>(value: [])
+    
+    var homeData:Binder<[HomeItem]>{
+        return Binder(self) { viewController, homeItems in
+//            guard let homeItem = homeItem else { return }
+            viewController.homeItems.accept(homeItems)
+        }
+    }
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -44,7 +55,7 @@ class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     // MARK: - TableView Delegate/DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.homeItems.value.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,8 +67,10 @@ class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let homeItem = self.homeItems.value[indexPath.row]
         return tableView.dequeueCell(ofType: HomeShopRecommendBlickTableViewCell.self).then { cell in
-            cell.setup()
+            guard let cell = cell as? HomeShopRecommendBlickTableViewCell else { return }
+            cell.setup(homeItem: homeItem)
         }
     }
 

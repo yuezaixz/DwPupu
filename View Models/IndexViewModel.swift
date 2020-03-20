@@ -23,6 +23,7 @@ class IndexViewModel {
     let banners = BehaviorRelay<[Banner]>(value: [])
     let categories = BehaviorRelay<[Category]>(value: [])
     let bannerIndex = BehaviorRelay<Int>(value: 0)
+    let homeItems = BehaviorRelay<[HomeItem]>(value: [])
     
     let topColor = BehaviorRelay<UIColor>(value: UIColor.white)
     let mainItems = BehaviorRelay<[Int]>(value: [1,2,3,4,5,6,7,8,9])
@@ -34,6 +35,8 @@ class IndexViewModel {
     }
 
     func bindOutput() {
+        
+        HomeItem.homePageData().bind(to: homeItems).disposed(by: disposeBag)
         
         bannerIndex.subscribe(onNext: { [weak self] bannerIndex in
             guard let self = self, bannerIndex < self.banners.value.count else { return }

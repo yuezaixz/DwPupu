@@ -432,6 +432,7 @@ class PupuIndexViewController: UIViewController {
         }
 
         let first = HomeMainTableViewController()
+        self.viewModel.homeItems.asDriver(onErrorJustReturn: []).drive(first.homeData).disposed(by: disposeBag)
         self.firstViewController = first
         self.addChild(first)
         containerScrollView.addSubview(first.view)

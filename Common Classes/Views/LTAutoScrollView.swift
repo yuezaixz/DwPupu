@@ -158,6 +158,16 @@ public class LTAutoScrollView: UIView {
         }
     }
     
+    public var backgroundColorIsClear = false {
+        didSet {
+            if backgroundColorIsClear {
+                collectionView.backgroundColor = UIColor.clear
+            } else {
+                collectionView.backgroundColor = UIColor.white
+            }
+        }
+    }
+    
     /*如果是默认模式`default`  直接传入images数组即可*/
     public var images: [String]? {
         didSet {
@@ -263,6 +273,9 @@ public class LTAutoScrollView: UIView {
     
     private lazy var collectionView: LTCollectionView = {
         let collectionView = LTCollectionView(frame: bounds, collectionViewLayout: layout, delegate: self, dataSource: self)
+        if self.backgroundColorIsClear {
+            collectionView.backgroundColor = UIColor.clear
+        }
         return collectionView
     }()
     

@@ -29,6 +29,8 @@ struct PupuApi: PupuAPIProtocol {
       case banners = "Mall/Banners?position_type=-1&"
       case baseData = "Common/BaseDataVersionService?zip=350206&places_ver=0&categories_ver=0&place_id=33308975-6f0c-4792-8459-8a5ff7d91d74&"
 
+      case homePage = "Mall/HomePage?not_tag=40&"
+
       private var baseURL: String {
           return "https://c.pupuapi.com/"
       }
@@ -77,6 +79,22 @@ struct PupuApi: PupuAPIProtocol {
         return response
           .map { result in
             guard let baseJsonData = result["t"] as? JSONObject else {return [:]}
+            return baseJsonData
+        }
+    }
+    
+    static func homePage() -> Observable<[JSONObject]> {
+        var response: Observable<JSONObject>!
+        
+        if PupuApi.isLocal {
+            response = loadLocal("homePage")
+        } else {
+           response  = request(PupuApi.Address.homePage)
+        }
+        
+        return response
+          .map { result in
+            guard let baseJsonData = result["list"] as? [JSONObject] else {return []}
             return baseJsonData
         }
     }
