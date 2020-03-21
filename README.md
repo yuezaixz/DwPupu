@@ -4,9 +4,9 @@
 
 ## 环境
 
-    * swift5
-    * rxswift 4.4
-    * Alamofire 4.8
+* swift5
+* rxswift 4.4
+* Alamofire 4.8
 
 ## API开关
 
