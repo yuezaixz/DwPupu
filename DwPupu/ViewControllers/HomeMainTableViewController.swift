@@ -11,7 +11,7 @@ import Then
 import RxSwift
 import RxCocoa
 
-class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChildScrollableProtocol {
     // MARK: - Properties
     weak var tableView: UITableView!
 

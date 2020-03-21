@@ -49,9 +49,9 @@ class PupuIndexViewController: UIViewController {
     fileprivate var viewModel: IndexViewModel!
     
     var superCanScroll = true
-    private var currentMainViewController:HomeMainTableViewController!
+    private var currentMainViewController:ChildScrollableProtocol!
     weak var firstViewController: HomeMainTableViewController!
-    weak var secondViewController: HomeMainTableViewController!
+    var subViewControllers: [HomeItemListViewController] = []
     
     var maxOffset: CGFloat {
         self.mainView.frame.origin.y - self.headerView.bounds.height
@@ -394,6 +394,7 @@ class PupuIndexViewController: UIViewController {
         flowLayout.scrollDirection = .horizontal
         
         self.menuCollectionView.setCollectionViewLayout(flowLayout, animated: false)
+        self.menuCollectionView.delegate = self
         
         let menuOffsetObservable = self.mainScrollView.rx.contentOffset.map{$0.y}
             .map { [weak self] offsetY -> CGFloat in
@@ -406,8 +407,11 @@ class PupuIndexViewController: UIViewController {
         }).share()
         menuOffsetObservable.bind(to: self.menuHeight.rx.constant).disposed(by: disposeBag)
         
-        self.viewModel.menuTitles
-            .bind(to: self.menuCollectionView.rx.items(cellIdentifier: "HomeMenuCollectionViewCell")){ index, model, cell in
+        self.viewModel.homeItems.map { homeItems -> [[String]] in
+            var results = [["精选", "好货专区"]]
+            results.append(contentsOf: homeItems.map {[$0.name,  $0.name]})
+            return results
+        }.bind(to: self.menuCollectionView.rx.items(cellIdentifier: "HomeMenuCollectionViewCell")){ index, model, cell in
                 guard let categoryCell = cell as? HomeMenuCollectionViewCell else {return}
                 categoryCell.titleLabel.text = model[0]
                 categoryCell.subTitleLabel.text = model[1]
@@ -423,7 +427,7 @@ class PupuIndexViewController: UIViewController {
         containerScrollView.isScrollEnabled = false
         self.mainTableViewContainer.addSubview(containerScrollView)
         let menuHeight = self.menuCollectionView.bounds.height
-        containerScrollView.contentSize = CGSize(width: DwScreen.width * 2, height: mainViewHeight)
+        containerScrollView.contentSize = CGSize(width: DwScreen.width * CGFloat(self.viewModel.homeItems.value.count+1), height: mainViewHeight)
         containerScrollView.snp.makeConstraints { (make) in
             make.leading.bottom.top.left.equalTo(0)
             make.width.equalTo(DwScreen.width)
@@ -441,27 +445,57 @@ class PupuIndexViewController: UIViewController {
             make.height.equalTo(DwScreen.height - menuHeight - DwScreen.statusBarHeight)
             make.width.equalTo(DwScreen.width)
         }
-
-        let second = HomeMainTableViewController()
-        self.secondViewController = second
-        self.addChild(second)
-        containerScrollView.addSubview(second.view)
-        second.view.snp.makeConstraints { (make) in
-            make.leading.equalTo(DwScreen.width)
-            make.top.bottom.equalTo(0)
-            make.width.equalTo(DwScreen.width)
-            make.height.equalTo(DwScreen.height - menuHeight - DwScreen.statusBarHeight)
-        }
         currentMainViewController = firstViewController
 
         first.superCanScrollBlock = { [weak self] (canScroll) in
             self?.superCanScroll = canScroll
         }
-        second.superCanScrollBlock = { [weak self] (canScroll) in
-            self?.superCanScroll = canScroll
-        }
+        
+        var lastVC:UIViewController = first
+        
+        self.viewModel.homeItems.asObservable().subscribe(onNext: { [weak self] homeItems in
+            guard let self = self else { return }
+            self.subViewControllers.forEach { subVC in
+                subVC.view.removeFromSuperview()
+            }
+            
+            homeItems.forEach { homeItem in
+                let otherVC = HomeItemListViewController()
+                otherVC.homeItem.accept(homeItem)
+                self.addChild(otherVC)
+                self.subViewControllers.append(otherVC)
+                containerScrollView.addSubview(otherVC.view)
+                otherVC.view.snp.makeConstraints { (make) in
+                    make.left.equalTo(lastVC.view.snp.right)
+                    make.top.bottom.equalTo(0)
+                    make.width.equalTo(DwScreen.width)
+                    make.height.equalTo(DwScreen.height - menuHeight - DwScreen.statusBarHeight)
+                }
+                otherVC.superCanScrollBlock = { [weak self] (canScroll) in
+                    self?.superCanScroll = canScroll
+                }
+                
+                lastVC = otherVC
+            }
+            
+            
+            
+        }).disposed(by: disposeBag)
+
+        
     }
 
+}
+
+extension PupuIndexViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            currentMainViewController = firstViewController
+        } else {
+            currentMainViewController = self.subViewControllers[indexPath.row-1]
+        }
+        self.containerScrollView.setContentOffset(CGPoint(x: DwScreen.width * CGFloat(indexPath.row), y: 0), animated: true)
+    }
 }
 
 extension PupuIndexViewController: UITableViewDelegate {
