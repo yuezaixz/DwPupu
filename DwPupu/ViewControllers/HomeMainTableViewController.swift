@@ -49,8 +49,10 @@ class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView(frame:CGRect(x: 0, y: 0, width: DwScreen.width, height: 80))
         
         tableView.register(UINib(nibName: "HomeShopRecommendBlickTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeShopRecommendBlickTableViewCell")
+        tableView.register(UINib(nibName: "HomeShopOtherBlockTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeShopOtherBlockTableViewCell")
     }
 
     // MARK: - TableView Delegate/DataSource
@@ -59,18 +61,33 @@ class HomeMainTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 270
+        let homeItem = self.homeItems.value[indexPath.row]
+        if (homeItem.name == "掌柜推荐") {
+            return HomeShopRecommendBlickTableViewCell.cellHeight
+        } else {
+            return HomeShopOtherBlockTableViewCell.cellHeight
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 270
+        let homeItem = self.homeItems.value[indexPath.row]
+        if (homeItem.name == "掌柜推荐") {
+            return HomeShopRecommendBlickTableViewCell.cellHeight
+        } else {
+            return HomeShopOtherBlockTableViewCell.cellHeight
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let homeItem = self.homeItems.value[indexPath.row]
-        return tableView.dequeueCell(ofType: HomeShopRecommendBlickTableViewCell.self).then { cell in
-            guard let cell = cell as? HomeShopRecommendBlickTableViewCell else { return }
-            cell.setup(homeItem: homeItem)
+        if (homeItem.name == "掌柜推荐") {
+            return tableView.dequeueCell(ofType: HomeShopRecommendBlickTableViewCell.self).then { cell in
+                cell.setup(homeItem: homeItem)
+            }
+        } else {
+            return tableView.dequeueCell(ofType: HomeShopOtherBlockTableViewCell.self).then { cell in
+                cell.setup(homeItem: homeItem)
+            }
         }
     }
 

@@ -9,7 +9,9 @@
 import UIKit
 import SnapKit
 
-class HomeShopRecommendBlickTableViewCell: UITableViewCell {
+class HomeShopRecommendBlickTableViewCell: UITableViewCell, DwCellHeightProtocol {
+    static let cellHeight: CGFloat = 270.0
+    
     
     @IBOutlet weak var containerView: UIView!
     
