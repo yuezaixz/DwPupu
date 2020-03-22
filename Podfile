@@ -9,7 +9,6 @@ abstract_target 'DwPupuAbstract' do
     pod 'RxCocoa', '4.4.1'
     pod 'RealmSwift', '3.12.0'
     pod 'RxRealm', '0.7.6'
-    pod 'Unbox', '3.0.0'
     pod 'Then', '2.2.1'
     pod 'Reachability', '3.2.0'
     pod 'RxRealmDataSources', '0.2.10'

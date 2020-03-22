@@ -11,7 +11,6 @@ import UIKit
 import RxSwift
 import RxRealm
 import RxCocoa
-import Unbox
 import Hue
 
 class IndexViewModel {
@@ -51,14 +50,7 @@ class IndexViewModel {
         Category.categorys().bind(to: categories).disposed(by: disposeBag)
         Category.homeSearchPlaceholder.bind(to: title).disposed(by: disposeBag)
 
-        PupuApi.banners()
-            .map { bannerJsonObjects in
-                let filterObjects = bannerJsonObjects.filter({ bannerJsonObject -> Bool in
-                    return bannerJsonObject["img_url"] != nil && !(bannerJsonObject["img_url"] is NSNull) && bannerJsonObject["bg_color"] != nil && (bannerJsonObject["bg_color"] as! String).count > 0
-            })
-                return (try? unbox(dictionaries: Array(filterObjects[0..<min(filterObjects.count, 8)]), allowInvalidElements: true) as [Banner]) ?? []
-        }.bind(to: banners).disposed(by: disposeBag)
-        
+        Banner.banners().map { Array($0[0..<min($0.count, 8)])}.bind(to: banners).disposed(by: disposeBag)
         
     }
 }

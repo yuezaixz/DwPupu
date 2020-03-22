@@ -12,4 +12,9 @@ extension String {
     func textSize(font : UIFont , maxSize : CGSize) -> CGSize{
         return self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font : font], context: nil).size
     }
+    
+    static func isNotEmpty(_ str:String?) -> Bool {
+        guard let str = str , str.count > 0 else { return false }
+        return true
+    }
 }
