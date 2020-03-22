@@ -115,7 +115,7 @@ class Banner: HandyJSON {
 extension Banner {
     
     static let linkUrlMap = BehaviorRelay<[String:String]>(value: [:])
-    static let positionIdUrlMap = BehaviorRelay<[String:String]>(value: [:])
+//    static let positionIdUrlMap = BehaviorRelay<[String:String]>(value: [:])
     
     static func banners() ->Observable<[Banner]> {
         return PupuApi.banners()
@@ -132,14 +132,13 @@ extension Banner {
                 var result:[String:String] = [:]
                 
                 banners.forEach { banner in
-                    if String.isNotEmpty(banner.linkId) && String.isNotEmpty(banner.imgUrl) {
+                    if String.isNotEmpty(banner.linkId) && String.isNotEmpty(banner.imgUrl) && banner.imgUrl.contains("gif") {
                         result[banner.linkId] = banner.imgUrl
                     }
-                    if String.isNotEmpty(banner.positionId) && String.isNotEmpty(banner.imgUrl) {
+                    if String.isNotEmpty(banner.positionId) && String.isNotEmpty(banner.imgUrl) && banner.imgUrl.contains("gif") {
                         result[banner.positionId] = banner.imgUrl
                     }
                 }
-                
                 linkUrlMap.accept(result)
             }).map({$0.filter{String.isNotEmpty($0.bgColor)}}).share(replay: 1)
     }

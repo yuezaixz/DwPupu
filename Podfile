@@ -15,6 +15,7 @@ abstract_target 'DwPupuAbstract' do
     pod 'SnapKit', '~> 5.0.0'
     pod 'PullToRefresher'
     pod 'Kingfisher', '5.3.1'
+    pod 'Gifu'
     pod 'Hue'
     pod 'pop'
     pod 'HandyJSON'

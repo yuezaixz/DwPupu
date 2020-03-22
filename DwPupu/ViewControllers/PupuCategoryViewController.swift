@@ -36,6 +36,7 @@ class PupuCategoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         leftTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UITableView.ScrollPosition.top)
+        self.currentCategoryViewController.toggleAnimation(animation: true)
     }
     
     // MARK: - setup View
@@ -82,6 +83,8 @@ class PupuCategoryViewController: UIViewController {
                 
                 lastVC = otherVC
             }
+            
+            self.currentCategoryViewController = self.categoryViewControllers.first
             if let lastVC = lastVC {
                 lastVC.view.snp.makeConstraints { make in
                     make.bottom.equalToSuperview()
@@ -95,8 +98,10 @@ class PupuCategoryViewController: UIViewController {
 extension PupuCategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row < viewModel.categories.value.count) {
-            print(viewModel.categories.value[indexPath.row].name)
+            currentCategoryViewController.toggleAnimation(animation: false)
+            categoryViewControllers[indexPath.row].toggleAnimation(animation: true)
             containerScrollView.setContentOffset(CGPoint(x: 0.0, y:self.leftTableView.bounds.height*CGFloat(indexPath.row)), animated: true)
+            currentCategoryViewController = categoryViewControllers[indexPath.row]
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

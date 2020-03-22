@@ -112,7 +112,7 @@ class DwFlowCollectionViewLayout: UICollectionViewFlowLayout {
                 return max(result, current)
             }
             let x = self.edgeInsets.left
-            attrs.frame = CGRect(x: x, y: y, width: __W * CGFloat(self.colunmCount), height: CGFloat(__H))
+            attrs.frame = CGRect(x: x, y: y, width: (__W * CGFloat(self.colunmCount) + self.columnMargin * CGFloat(self.colunmCount-1)  ), height: CGFloat(__H))
             //更新所有列
             columnHeights.removeAll()
             

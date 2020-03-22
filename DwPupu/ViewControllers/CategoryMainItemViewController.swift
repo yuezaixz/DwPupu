@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Gifu
 
 class CategoryMainItemViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -16,11 +17,40 @@ class CategoryMainItemViewController: UIViewController, UICollectionViewDelegate
     weak var collectionView: UICollectionView!
     
     let category = BehaviorRelay<Category>(value:Category())
+    
+    var topGifImageView:GIFImageView? = nil
+    var currentUrlString:String? = nil
 
     // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         _initUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let topGifImageView = self.topGifImageView, let urlStr = currentUrlString, let url = URL(string: urlStr) {
+            topGifImageView.animate(withGIFURL: url){
+                print(" (\(topGifImageView.frameCount) frames / \(String(format: "%.2f", topGifImageView.gifLoopDuration))s)")
+            }
+        }
+    }
+    
+    func toggleAnimation(animation: Bool) {
+        guard let topGifImageView = topGifImageView else { return }
+        if !animation && topGifImageView.isAnimatingGIF {
+            topGifImageView.stopAnimatingGIF()
+        } else if animation && !topGifImageView.isAnimatingGIF {
+            topGifImageView.startAnimatingGIF()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let topGifImageView = self.topGifImageView {
+            topGifImageView.stopAnimatingGIF()
+            topGifImageView.prepareForReuse()
+        }
     }
 
     // MARK: - Initialize Appreaence
@@ -59,15 +89,23 @@ class CategoryMainItemViewController: UIViewController, UICollectionViewDelegate
         if (indexPath.row == 0) {
 
             return collectionView.dequeueCell(ofType: CategoryMainTopCollectionViewCell.self, for: indexPath).then { cell in
-                if let urlStr = Banner.linkUrlMap.value[category.value.id] ?? Banner.positionIdUrlMap.value[category.value.id] {
-                    cell.imageView.kf.setImage(with: URL(string: "https://imgs.static.pupumall.com/\(urlStr)"))
-                    cell.imageView.contentMode = .scaleAspectFill
+                if let urlStr = Banner.linkUrlMap.value[category.value.id] {
+                    if !urlStr.contains("gif") {
+                        cell.imageView.kf.setImage(with: URL(string: "https://imgs.static.pupumall.com/\(urlStr)"))
+                        cell.imageView.contentMode = .scaleAspectFill
+                        cell.showImage(isGif: false)
+                    } else {
+
+                        self.topGifImageView = cell.gifImageView
+                        self.currentUrlString = "https://imgs.static.pupumall.com/\(urlStr)"
+                        
+                        cell.showImage(isGif: true)
+                    }
                 }
             }
         } else {
             return collectionView.dequeueCell(ofType: CategoryMainItemCollectionViewCell.self, for: indexPath).then { cell in
                 cell.nameLabel.text = subCategory.name
-                print(subCategory.imgUrl)
                 cell.imageView.kf.setImage(with: URL(string: subCategory.imgUrl))
                 cell.imageView.contentMode = .scaleAspectFill
             }
