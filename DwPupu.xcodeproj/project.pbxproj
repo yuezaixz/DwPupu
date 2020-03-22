@@ -42,6 +42,8 @@
 		A68AC42B2426F3500058E2BB /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AC42A2426F3500058E2BB /* CategoryViewModel.swift */; };
 		A68AC42E2426F8710058E2BB /* CategoryNaviTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AC42C2426F8710058E2BB /* CategoryNaviTableViewCell.swift */; };
 		A68AC42F2426F8710058E2BB /* CategoryNaviTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AC42D2426F8710058E2BB /* CategoryNaviTableViewCell.xib */; };
+		A68AC43224270C560058E2BB /* CategoryMainItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AC43024270C560058E2BB /* CategoryMainItemViewController.swift */; };
+		A68AC43324270C560058E2BB /* CategoryMainItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AC43124270C560058E2BB /* CategoryMainItemViewController.xib */; };
 		A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A10241F9F0300C6863B /* AppDelegate.swift */; };
 		A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A19241F9F0600C6863B /* Assets.xcassets */; };
 		A6C08A28241F9F0700C6863B /* DwPupuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A27241F9F0700C6863B /* DwPupuTests.swift */; };
@@ -137,6 +139,8 @@
 		A68AC42A2426F3500058E2BB /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		A68AC42C2426F8710058E2BB /* CategoryNaviTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNaviTableViewCell.swift; sourceTree = "<group>"; };
 		A68AC42D2426F8710058E2BB /* CategoryNaviTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryNaviTableViewCell.xib; sourceTree = "<group>"; };
+		A68AC43024270C560058E2BB /* CategoryMainItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainItemViewController.swift; sourceTree = "<group>"; };
+		A68AC43124270C560058E2BB /* CategoryMainItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMainItemViewController.xib; sourceTree = "<group>"; };
 		A6C08A0D241F9F0300C6863B /* 朴朴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "朴朴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C08A10241F9F0300C6863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C08A19241F9F0600C6863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				A6D1A1412423213700CDEAC2 /* HomeMainTableViewController.xib */,
 				A68AC4192426316A0058E2BB /* HomeItemListViewController.swift */,
 				A68AC41A2426316A0058E2BB /* HomeItemListViewController.xib */,
+				A68AC43024270C560058E2BB /* CategoryMainItemViewController.swift */,
+				A68AC43124270C560058E2BB /* CategoryMainItemViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 				A6D1A1332422062800CDEAC2 /* storeproduct.json in Resources */,
 				A6D1A1432423213700CDEAC2 /* HomeMainTableViewController.xib in Resources */,
 				A68AC420242643130058E2BB /* HomeItemListCollectionViewCell.xib in Resources */,
+				A68AC43324270C560058E2BB /* CategoryMainItemViewController.xib in Resources */,
 				A61DCF68242082CC0036F8DC /* IndexHeaderView.xib in Resources */,
 				A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */,
 				A6682CBD2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib in Resources */,
@@ -767,6 +774,7 @@
 				A68AC4152425BD380058E2BB /* HomeShopOtherBlockTableViewCell.swift in Sources */,
 				A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */,
 				A6682CB42423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift in Sources */,
+				A68AC43224270C560058E2BB /* CategoryMainItemViewController.swift in Sources */,
 				A6792E6B241FCDA400197870 /* DwTabBarController.swift in Sources */,
 				A6D1A1362422445500CDEAC2 /* HomeMenuCollectionViewCell.swift in Sources */,
 				A6682CC22424C6FE00989FA7 /* HomeItem.swift in Sources */,

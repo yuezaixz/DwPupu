@@ -427,6 +427,7 @@ class PupuIndexViewController: UIViewController {
         containerScrollView.isScrollEnabled = false
         self.mainTableViewContainer.addSubview(containerScrollView)
         let menuHeight = self.menuCollectionView.bounds.height
+        
         containerScrollView.contentSize = CGSize(width: DwScreen.width * CGFloat(self.viewModel.homeItems.value.count+1), height: mainViewHeight)
         containerScrollView.snp.makeConstraints { (make) in
             make.leading.bottom.top.left.equalTo(0)
@@ -436,6 +437,9 @@ class PupuIndexViewController: UIViewController {
         }
 
         let first = HomeMainTableViewController()
+        self.viewModel.homeItems.subscribe(onNext: { (homeItems) in
+            containerScrollView.contentSize = CGSize(width: DwScreen.width * CGFloat(homeItems.count+1), height: mainViewHeight)
+        }).disposed(by: disposeBag)
         self.viewModel.homeItems.asDriver(onErrorJustReturn: []).drive(first.homeData).disposed(by: disposeBag)
         self.firstViewController = first
         self.addChild(first)

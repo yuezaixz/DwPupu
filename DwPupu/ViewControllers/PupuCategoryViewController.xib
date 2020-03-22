@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PupuCategoryViewController" customModule="朴朴" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="4wF-DW-V88" id="uFs-4D-idO"/>
                 <outlet property="leftTableView" destination="TyK-Cp-YMf" id="HiC-nx-0lJ"/>
                 <outlet property="searchBtn" destination="vMc-3N-M6I" id="9vk-9M-HS2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
