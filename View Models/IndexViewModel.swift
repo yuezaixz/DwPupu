@@ -48,15 +48,8 @@ class IndexViewModel {
             }
         }).disposed(by: disposeBag)
         
-        PupuApi.baseData()
-            .do(onNext: {[weak self] jsonObject in
-                guard jsonObject["default_search_placeholder"] != nil ,let self = self, let title = jsonObject["default_search_placeholder"] as? String else {return}
-                print("placehold:\(title)")
-                self.title.accept(title)
-            }).map { jsonObject -> [Category] in
-                guard let cityCategories = jsonObject["city_categories"] as? Dictionary<String, Any> , let categories = cityCategories["categories"] as? [Dictionary<String, Any>], categories.count >= 8 else { return [] }
-                return (try? unbox(dictionaries: categories, allowInvalidElements: true) as [Category]) ?? []
-        }.filter({ $0.count > 0 }).bind(to: categories).disposed(by: disposeBag)
+        Category.categorys().bind(to: categories).disposed(by: disposeBag)
+        Category.homeSearchPlaceholder.bind(to: title).disposed(by: disposeBag)
 
         PupuApi.banners()
             .map { bannerJsonObjects in
