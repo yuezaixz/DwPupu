@@ -115,16 +115,16 @@ class Banner: HandyJSON {
 extension Banner {
     
     static let linkUrlMap = BehaviorRelay<[String:String]>(value: [:])
+    static let positionIdUrlMap = BehaviorRelay<[String:String]>(value: [:])
     
     static func banners() ->Observable<[Banner]> {
         return PupuApi.banners()
             .map { bannerJsonObjects -> [Banner] in
                 let filterObjects = bannerJsonObjects.filter({ bannerJsonObject -> Bool in
-                    return bannerJsonObject["img_url"] != nil && !(bannerJsonObject["img_url"] is NSNull) && bannerJsonObject["bg_color"] != nil && (bannerJsonObject["bg_color"] as! String).count > 0
+                    return bannerJsonObject["img_url"] != nil && !(bannerJsonObject["img_url"] is NSNull)
                 })
                 return filterObjects.map { jsonObject -> Banner in
                     guard let homeItem = Banner.deserialize(from: jsonObject) else {return Banner()}
-                    
                     return homeItem
                 }
             }
@@ -132,11 +132,15 @@ extension Banner {
                 var result:[String:String] = [:]
                 
                 banners.forEach { banner in
-                    guard String.isNotEmpty(banner.linkId) && String.isNotEmpty(banner.imgUrl) else { return }
-                    result[banner.linkId] = banner.imgUrl
+                    if String.isNotEmpty(banner.linkId) && String.isNotEmpty(banner.imgUrl) {
+                        result[banner.linkId] = banner.imgUrl
+                    }
+                    if String.isNotEmpty(banner.positionId) && String.isNotEmpty(banner.imgUrl) {
+                        result[banner.positionId] = banner.imgUrl
+                    }
                 }
                 
                 linkUrlMap.accept(result)
-            }).share(replay: 1)
+            }).map({$0.filter{String.isNotEmpty($0.bgColor)}}).share(replay: 1)
     }
 }

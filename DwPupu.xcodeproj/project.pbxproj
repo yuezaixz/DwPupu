@@ -44,6 +44,10 @@
 		A68AC42F2426F8710058E2BB /* CategoryNaviTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AC42D2426F8710058E2BB /* CategoryNaviTableViewCell.xib */; };
 		A68AC43224270C560058E2BB /* CategoryMainItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AC43024270C560058E2BB /* CategoryMainItemViewController.swift */; };
 		A68AC43324270C560058E2BB /* CategoryMainItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AC43124270C560058E2BB /* CategoryMainItemViewController.xib */; };
+		A68AC43624271FC90058E2BB /* CategoryMainTopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AC43424271FC90058E2BB /* CategoryMainTopCollectionViewCell.swift */; };
+		A68AC43724271FC90058E2BB /* CategoryMainTopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AC43524271FC90058E2BB /* CategoryMainTopCollectionViewCell.xib */; };
+		A68AC43A24271FE70058E2BB /* CategoryMainItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AC43824271FE70058E2BB /* CategoryMainItemCollectionViewCell.swift */; };
+		A68AC43B24271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AC43924271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib */; };
 		A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A10241F9F0300C6863B /* AppDelegate.swift */; };
 		A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A19241F9F0600C6863B /* Assets.xcassets */; };
 		A6C08A28241F9F0700C6863B /* DwPupuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A27241F9F0700C6863B /* DwPupuTests.swift */; };
@@ -141,6 +145,10 @@
 		A68AC42D2426F8710058E2BB /* CategoryNaviTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryNaviTableViewCell.xib; sourceTree = "<group>"; };
 		A68AC43024270C560058E2BB /* CategoryMainItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainItemViewController.swift; sourceTree = "<group>"; };
 		A68AC43124270C560058E2BB /* CategoryMainItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMainItemViewController.xib; sourceTree = "<group>"; };
+		A68AC43424271FC90058E2BB /* CategoryMainTopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainTopCollectionViewCell.swift; sourceTree = "<group>"; };
+		A68AC43524271FC90058E2BB /* CategoryMainTopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMainTopCollectionViewCell.xib; sourceTree = "<group>"; };
+		A68AC43824271FE70058E2BB /* CategoryMainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		A68AC43924271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMainItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		A6C08A0D241F9F0300C6863B /* 朴朴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "朴朴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C08A10241F9F0300C6863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C08A19241F9F0600C6863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +258,10 @@
 				A68AC41E242643130058E2BB /* HomeItemListCollectionViewCell.xib */,
 				A68AC42C2426F8710058E2BB /* CategoryNaviTableViewCell.swift */,
 				A68AC42D2426F8710058E2BB /* CategoryNaviTableViewCell.xib */,
+				A68AC43424271FC90058E2BB /* CategoryMainTopCollectionViewCell.swift */,
+				A68AC43524271FC90058E2BB /* CategoryMainTopCollectionViewCell.xib */,
+				A68AC43824271FE70058E2BB /* CategoryMainItemCollectionViewCell.swift */,
+				A68AC43924271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -599,6 +611,7 @@
 				A6D1A13B24225B4900CDEAC2 /* HomeMainSectionTableViewCell.xib in Resources */,
 				A6D1A1372422445500CDEAC2 /* HomeMenuCollectionViewCell.xib in Resources */,
 				A6792E67241FC1BC00197870 /* PupuMyViewController.xib in Resources */,
+				A68AC43724271FC90058E2BB /* CategoryMainTopCollectionViewCell.xib in Resources */,
 				A68AC4162425BD380058E2BB /* HomeShopOtherBlockTableViewCell.xib in Resources */,
 				A6D1A12E2422062800CDEAC2 /* categories.json in Resources */,
 				A6D1A1312422062800CDEAC2 /* banner.json in Resources */,
@@ -611,6 +624,7 @@
 				A6D1A1432423213700CDEAC2 /* HomeMainTableViewController.xib in Resources */,
 				A68AC420242643130058E2BB /* HomeItemListCollectionViewCell.xib in Resources */,
 				A68AC43324270C560058E2BB /* CategoryMainItemViewController.xib in Resources */,
+				A68AC43B24271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib in Resources */,
 				A61DCF68242082CC0036F8DC /* IndexHeaderView.xib in Resources */,
 				A6792E5B241FC14600197870 /* PupuCategoryViewController.xib in Resources */,
 				A6682CBD2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib in Resources */,
@@ -759,6 +773,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68AC4182425F5760058E2BB /* DwCellHeightProtocol.swift in Sources */,
+				A68AC43624271FC90058E2BB /* CategoryMainTopCollectionViewCell.swift in Sources */,
 				A6792E6E241FD1F500197870 /* DwTabBar.swift in Sources */,
 				A6D1A11E2421C04F00CDEAC2 /* HomeCategoryCollectionViewCell.swift in Sources */,
 				A6792E66241FC1BC00197870 /* PupuMyViewController.swift in Sources */,
@@ -781,6 +796,7 @@
 				A6D1A1422423213700CDEAC2 /* HomeMainTableViewController.swift in Sources */,
 				A68AC41F242643130058E2BB /* HomeItemListCollectionViewCell.swift in Sources */,
 				A6682CBC2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift in Sources */,
+				A68AC43A24271FE70058E2BB /* CategoryMainItemCollectionViewCell.swift in Sources */,
 				A61DCF66242081F50036F8DC /* IndexHeaderView.swift in Sources */,
 				A68AC42224264B840058E2BB /* DwFlowCollectionViewLayout.swift in Sources */,
 				A6D1A10E2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift in Sources */,

@@ -11,6 +11,8 @@ import UIKit
 protocol DwFlowCollectionViewLayoutDelegate: AnyObject {
     func waterFallLayout(_ waterFallLayout: DwFlowCollectionViewLayout, heightForItemAtIndexPath indexPath: Int) -> CGFloat
     
+    func isFullRowInWaterFallLayout(_ columnCountInWaterFallLayout: DwFlowCollectionViewLayout, inIndexPath indexPath: Int) -> Bool
+    
     func columnCountInWaterFallLayout(_ waterFallLayout: DwFlowCollectionViewLayout) -> Int?
     
     func columnMarginInWaterFallLayout(_ columnCountInWaterFallLayout: DwFlowCollectionViewLayout) -> CGFloat?
@@ -28,6 +30,10 @@ extension DwFlowCollectionViewLayoutDelegate {
     func rowMarginInWaterFallLayout(_ columnCountInWaterFallLayout: DwFlowCollectionViewLayout) -> CGFloat? { return nil }
     
     func edgeInsetdInWaterFallLayout(_ columnCountInWaterFallLayout: DwFlowCollectionViewLayout) -> UIEdgeInsets? { return nil }
+    
+    func isFullRowInWaterFallLayout(_ columnCountInWaterFallLayout: DwFlowCollectionViewLayout, inIndexPath indexPath: Int) -> Bool {
+        return false
+    }
 }
 
 class DwFlowCollectionViewLayout: UICollectionViewFlowLayout {
@@ -100,30 +106,46 @@ class DwFlowCollectionViewLayout: UICollectionViewFlowLayout {
         let __W = (collectionWidth! - self.edgeInsets.left - self.edgeInsets.right - CGFloat(self.colunmCount-1) * self.columnMargin) / CGFloat(self.colunmCount)
         let __H = delegate?.waterFallLayout(self, heightForItemAtIndexPath: indexPath.row) ?? kItemHeightDefault
         
-        //找出高度最短那一列
-        var dextColum : Int = 0
-        var mainH = columnHeights[0]
         
-        for i in 1 ..< self.colunmCount{
-            //取出第i列的高度
-            let columnH = columnHeights[i]
-            
-            if mainH > columnH {
-                mainH = columnH
-                dextColum = i
+        if delegate?.isFullRowInWaterFallLayout(self, inIndexPath: indexPath.row) ?? false {
+            let y = columnHeights.reduce(0) { (result, current) -> CGFloat in
+                return max(result, current)
             }
+            let x = self.edgeInsets.left
+            attrs.frame = CGRect(x: x, y: y, width: __W * CGFloat(self.colunmCount), height: CGFloat(__H))
+            //更新所有列
+            columnHeights.removeAll()
+            
+            for _ in 0 ..< self.colunmCount {
+                columnHeights.append(attrs.frame.maxY)
+            }
+        } else {
+            //找出高度最短那一列
+            var dextColum : Int = 0
+            var mainH = columnHeights[0]
+            
+            for i in 1 ..< self.colunmCount{
+                //取出第i列的高度
+                let columnH = columnHeights[i]
+                
+                if mainH > columnH {
+                    mainH = columnH
+                    dextColum = i
+                }
+            }
+
+            var y = mainH
+            if y != self.edgeInsets.top{
+                y = y + self.rowMargin
+            }
+            let x = self.edgeInsets.left + CGFloat(dextColum) * (__W + self.columnMargin)
+            
+            attrs.frame = CGRect(x: x, y: y, width: __W, height: CGFloat(__H))
+            //更新最短那列高度
+            columnHeights[dextColum] = attrs.frame.maxY
         }
         
         
-        let x = self.edgeInsets.left + CGFloat(dextColum) * (__W + self.columnMargin)
-        var y = mainH
-        
-        if y != self.edgeInsets.top{
-            y = y + self.rowMargin
-        }
-        attrs.frame = CGRect(x: x, y: y, width: __W, height: CGFloat(__H))
-        //更新最短那列高度
-        columnHeights[dextColum] = attrs.frame.maxY
         return attrs
     }
     
