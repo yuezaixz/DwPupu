@@ -25,7 +25,7 @@ class PupuCategoryViewController: UIViewController {
     private var containerScrollView:UIScrollView!
     
     private var categoryViewControllers:[CategoryMainItemViewController] = []
-    private var currentCategoryViewController: CategoryMainItemViewController!
+    private var currentCategoryViewController: CategoryMainItemViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class PupuCategoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         leftTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UITableView.ScrollPosition.top)
-        self.currentCategoryViewController.toggleAnimation(animation: true)
+        self.currentCategoryViewController?.toggleAnimation(animation: true)
     }
     
     // MARK: - setup View
@@ -45,7 +45,7 @@ class PupuCategoryViewController: UIViewController {
         leftTableView.register(UINib.init(nibName: "CategoryNaviTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryNaviTableViewCell")
         viewModel.categories.bind(to: leftTableView.rx.items(cellIdentifier: "CategoryNaviTableViewCell")){ index, model, cell in
             guard let categoryCell = cell as? CategoryNaviTableViewCell else {return}
-            categoryCell.nameLabel.text = model.name
+            categoryCell.update(with: model)
         }.disposed(by: disposeBag)
     }
     
@@ -84,25 +84,37 @@ class PupuCategoryViewController: UIViewController {
                 lastVC = otherVC
             }
             
-            self.currentCategoryViewController = self.categoryViewControllers.first
+            self.viewModel.selectIndex = 0
             if let lastVC = lastVC {
                 lastVC.view.snp.makeConstraints { make in
                     make.bottom.equalToSuperview()
                 }
             }
         }).disposed(by: disposeBag)
+        
+        let selectedIndex = self.viewModel.selectedIndex.skip(1).share(replay: 1)
+        
+        selectedIndex
+            .map{ CGPoint(x: 0.0, y:self.leftTableView.bounds.height*CGFloat($0)) }
+            .asDriver(onErrorJustReturn: CGPoint(x: 0, y: 0))
+            .drive(containerScrollView.rx.contentOffset).disposed(by: disposeBag)
+        selectedIndex.subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] index in
+            guard let self = self, index < self.categoryViewControllers.count  else { return }
+                if let currentCategoryViewController = self.currentCategoryViewController {
+                    currentCategoryViewController.toggleAnimation(animation: false)
+                }
+                self.categoryViewControllers[index].toggleAnimation(animation: true)
+                self.currentCategoryViewController = self.categoryViewControllers[index]
+            }).disposed(by: disposeBag)
+            
+        
     }
 
 }
 
 extension PupuCategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row < viewModel.categories.value.count) {
-            currentCategoryViewController.toggleAnimation(animation: false)
-            categoryViewControllers[indexPath.row].toggleAnimation(animation: true)
-            containerScrollView.setContentOffset(CGPoint(x: 0.0, y:self.leftTableView.bounds.height*CGFloat(indexPath.row)), animated: true)
-            currentCategoryViewController = categoryViewControllers[indexPath.row]
-        }
+        viewModel.selectIndex = indexPath.row
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55.0

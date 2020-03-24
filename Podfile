@@ -32,11 +32,11 @@ abstract_target 'DwPupuAbstract' do
     end
 
 
-
-    target 'DwPupuUITests' do
-        platform :ios, '10.0'
-        pod 'RxTest', '4.4.1'
-        pod 'RxBlocking', '4.4.1'
-    end
+#
+#    target 'DwPupuUITests' do
+#        platform :ios, '10.0'
+#        pod 'RxTest', '4.4.1'
+#        pod 'RxBlocking', '4.4.1'
+#    end
 end
 

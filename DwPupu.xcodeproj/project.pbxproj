@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		50A345CD631FB9A64AD4AFE2 /* Pods_DwPupuAbstract_DwPupu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8410F3E14CD41A27167778AD /* Pods_DwPupuAbstract_DwPupu.framework */; };
-		64CB2A93559BE5DE2E75143E /* Pods_DwPupuAbstract_DwPupuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D59C25084DFB3D89E6FCACD /* Pods_DwPupuAbstract_DwPupuTests.framework */; };
 		A61DCF66242081F50036F8DC /* IndexHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61DCF65242081F50036F8DC /* IndexHeaderView.swift */; };
 		A61DCF68242082CC0036F8DC /* IndexHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61DCF67242082CC0036F8DC /* IndexHeaderView.xib */; };
 		A61DCF6B2420898B0036F8DC /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */; };
 		A64F80B624284A5500DD232E /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F80B524284A5500DD232E /* Color+Theme.swift */; };
+		A64F80BE24299A2200DD232E /* DwPupuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F80BD24299A2200DD232E /* DwPupuTests.swift */; };
+		A64F80C624299C1900DD232E /* CategoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F80C524299C1900DD232E /* CategoryViewModelTests.swift */; };
 		A6682CB42423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682CB32423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift */; };
 		A6682CBC2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682CBA2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift */; };
 		A6682CBD2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6682CBB2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib */; };
@@ -51,8 +52,6 @@
 		A68AC43B24271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AC43924271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib */; };
 		A6C08A11241F9F0300C6863B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A10241F9F0300C6863B /* AppDelegate.swift */; };
 		A6C08A1A241F9F0600C6863B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A19241F9F0600C6863B /* Assets.xcassets */; };
-		A6C08A28241F9F0700C6863B /* DwPupuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A27241F9F0700C6863B /* DwPupuTests.swift */; };
-		A6C08A33241F9F0700C6863B /* DwPupuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A32241F9F0700C6863B /* DwPupuUITests.swift */; };
 		A6C08A42241F9F7F00C6863B /* PupuIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */; };
 		A6C08A43241F9F7F00C6863B /* PupuIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C08A41241F9F7F00C6863B /* PupuIndexViewController.xib */; };
 		A6D1A10E2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */; };
@@ -80,18 +79,11 @@
 		A6D1A13F2423140700CDEAC2 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A13E2423140700CDEAC2 /* ScreenUtil.swift */; };
 		A6D1A1422423213700CDEAC2 /* HomeMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1A1402423213700CDEAC2 /* HomeMainTableViewController.swift */; };
 		A6D1A1432423213700CDEAC2 /* HomeMainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D1A1412423213700CDEAC2 /* HomeMainTableViewController.xib */; };
-		CBED216E23EF849A5E0CEB8F /* Pods_DwPupuAbstract_DwPupuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A80CE46165BFCA6CFB59F9 /* Pods_DwPupuAbstract_DwPupuUITests.framework */; };
+		F2BD6F343CDB9F0DBF765E76 /* Pods_DwPupuAbstract_DwPupuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D59C25084DFB3D89E6FCACD /* Pods_DwPupuAbstract_DwPupuTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A6C08A24241F9F0700C6863B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6C08A05241F9F0300C6863B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A6C08A0C241F9F0300C6863B;
-			remoteInfo = DwPupu;
-		};
-		A6C08A2F241F9F0700C6863B /* PBXContainerItemProxy */ = {
+		A64F80C024299A2200DD232E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6C08A05241F9F0300C6863B /* Project object */;
 			proxyType = 1;
@@ -114,6 +106,10 @@
 		A61DCF67242082CC0036F8DC /* IndexHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexHeaderView.xib; sourceTree = "<group>"; };
 		A61DCF6A2420898B0036F8DC /* DeviceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
 		A64F80B524284A5500DD232E /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		A64F80BB24299A2200DD232E /* DwPupuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DwPupuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64F80BD24299A2200DD232E /* DwPupuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwPupuTests.swift; sourceTree = "<group>"; };
+		A64F80BF24299A2200DD232E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A64F80C524299C1900DD232E /* CategoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModelTests.swift; sourceTree = "<group>"; };
 		A6682CB32423475A00989FA7 /* DwAutoCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwAutoCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		A6682CBA2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopRecommendBlickTableViewCell.swift; sourceTree = "<group>"; };
 		A6682CBB2423BFC800989FA7 /* HomeShopRecommendBlickTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeShopRecommendBlickTableViewCell.xib; sourceTree = "<group>"; };
@@ -155,12 +151,6 @@
 		A6C08A10241F9F0300C6863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C08A19241F9F0600C6863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6C08A1E241F9F0600C6863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6C08A23241F9F0700C6863B /* DwPupuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DwPupuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6C08A27241F9F0700C6863B /* DwPupuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwPupuTests.swift; sourceTree = "<group>"; };
-		A6C08A29241F9F0700C6863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6C08A2E241F9F0700C6863B /* DwPupuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DwPupuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6C08A32241F9F0700C6863B /* DwPupuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwPupuUITests.swift; sourceTree = "<group>"; };
-		A6C08A34241F9F0700C6863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6C08A40241F9F7F00C6863B /* PupuIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupuIndexViewController.swift; sourceTree = "<group>"; };
 		A6C08A41241F9F7F00C6863B /* PupuIndexViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PupuIndexViewController.xib; sourceTree = "<group>"; };
 		A6D1A10D2420CCF800CDEAC2 /* IndexHeaderView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexHeaderView+Rx.swift"; sourceTree = "<group>"; };
@@ -195,27 +185,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A64F80B824299A2200DD232E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2BD6F343CDB9F0DBF765E76 /* Pods_DwPupuAbstract_DwPupuTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6C08A0A241F9F0300C6863B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				50A345CD631FB9A64AD4AFE2 /* Pods_DwPupuAbstract_DwPupu.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6C08A20241F9F0700C6863B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64CB2A93559BE5DE2E75143E /* Pods_DwPupuAbstract_DwPupuTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6C08A2B241F9F0700C6863B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBED216E23EF849A5E0CEB8F /* Pods_DwPupuAbstract_DwPupuUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +231,16 @@
 				A64F80B524284A5500DD232E /* Color+Theme.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		A64F80BC24299A2200DD232E /* DwPupuTests */ = {
+			isa = PBXGroup;
+			children = (
+				A64F80BD24299A2200DD232E /* DwPupuTests.swift */,
+				A64F80BF24299A2200DD232E /* Info.plist */,
+				A64F80C524299C1900DD232E /* CategoryViewModelTests.swift */,
+			);
+			path = DwPupuTests;
 			sourceTree = "<group>";
 		};
 		A6682CB52423BF7A00989FA7 /* Cells */ = {
@@ -406,8 +398,7 @@
 				A6792E54241FADA400197870 /* View Models */,
 				A6792E50241FAD3900197870 /* Common Classes */,
 				A6C08A0F241F9F0300C6863B /* DwPupu */,
-				A6C08A26241F9F0700C6863B /* DwPupuTests */,
-				A6C08A31241F9F0700C6863B /* DwPupuUITests */,
+				A64F80BC24299A2200DD232E /* DwPupuTests */,
 				A6C08A0E241F9F0300C6863B /* Products */,
 				EC20371452BB56CCAD6F04FD /* Pods */,
 				73BCB604C6B98E7791B7ECF1 /* Frameworks */,
@@ -418,8 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				A6C08A0D241F9F0300C6863B /* 朴朴.app */,
-				A6C08A23241F9F0700C6863B /* DwPupuTests.xctest */,
-				A6C08A2E241F9F0700C6863B /* DwPupuUITests.xctest */,
+				A64F80BB24299A2200DD232E /* DwPupuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -435,24 +425,6 @@
 				A6C08A10241F9F0300C6863B /* AppDelegate.swift */,
 			);
 			path = DwPupu;
-			sourceTree = "<group>";
-		};
-		A6C08A26241F9F0700C6863B /* DwPupuTests */ = {
-			isa = PBXGroup;
-			children = (
-				A6C08A27241F9F0700C6863B /* DwPupuTests.swift */,
-				A6C08A29241F9F0700C6863B /* Info.plist */,
-			);
-			path = DwPupuTests;
-			sourceTree = "<group>";
-		};
-		A6C08A31241F9F0700C6863B /* DwPupuUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A6C08A32241F9F0700C6863B /* DwPupuUITests.swift */,
-				A6C08A34241F9F0700C6863B /* Info.plist */,
-			);
-			path = DwPupuUITests;
 			sourceTree = "<group>";
 		};
 		A6D1A1132421091600CDEAC2 /* Views */ = {
@@ -506,6 +478,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A64F80BA24299A2200DD232E /* DwPupuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A64F80C424299A2200DD232E /* Build configuration list for PBXNativeTarget "DwPupuTests" */;
+			buildPhases = (
+				49325AE7B87BDDAFDADE03C2 /* [CP] Check Pods Manifest.lock */,
+				A64F80B724299A2200DD232E /* Sources */,
+				A64F80B824299A2200DD232E /* Frameworks */,
+				A64F80B924299A2200DD232E /* Resources */,
+				57FC8EDD3794BA3B9704EA25 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A64F80C124299A2200DD232E /* PBXTargetDependency */,
+			);
+			name = DwPupuTests;
+			productName = DwPupuTests;
+			productReference = A64F80BB24299A2200DD232E /* DwPupuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A6C08A0C241F9F0300C6863B /* DwPupu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6C08A37241F9F0700C6863B /* Build configuration list for PBXNativeTarget "DwPupu" */;
@@ -525,46 +517,6 @@
 			productReference = A6C08A0D241F9F0300C6863B /* 朴朴.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A6C08A22241F9F0700C6863B /* DwPupuTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A6C08A3A241F9F0700C6863B /* Build configuration list for PBXNativeTarget "DwPupuTests" */;
-			buildPhases = (
-				082E891EF66DFA33AC03D8EC /* [CP] Check Pods Manifest.lock */,
-				A6C08A1F241F9F0700C6863B /* Sources */,
-				A6C08A20241F9F0700C6863B /* Frameworks */,
-				A6C08A21241F9F0700C6863B /* Resources */,
-				8B872F1A7B10C460A6A5245C /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A6C08A25241F9F0700C6863B /* PBXTargetDependency */,
-			);
-			name = DwPupuTests;
-			productName = DwPupuTests;
-			productReference = A6C08A23241F9F0700C6863B /* DwPupuTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A6C08A2D241F9F0700C6863B /* DwPupuUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A6C08A3D241F9F0700C6863B /* Build configuration list for PBXNativeTarget "DwPupuUITests" */;
-			buildPhases = (
-				3B6A9001607B8E809A504C0D /* [CP] Check Pods Manifest.lock */,
-				A6C08A2A241F9F0700C6863B /* Sources */,
-				A6C08A2B241F9F0700C6863B /* Frameworks */,
-				A6C08A2C241F9F0700C6863B /* Resources */,
-				F9746BD102C1B68BF69FF186 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A6C08A30241F9F0700C6863B /* PBXTargetDependency */,
-			);
-			name = DwPupuUITests;
-			productName = DwPupuUITests;
-			productReference = A6C08A2E241F9F0700C6863B /* DwPupuUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -575,16 +527,12 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = davidandty;
 				TargetAttributes = {
+					A64F80BA24299A2200DD232E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = A6C08A0C241F9F0300C6863B;
+					};
 					A6C08A0C241F9F0300C6863B = {
 						CreatedOnToolsVersion = 11.3;
-					};
-					A6C08A22241F9F0700C6863B = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = A6C08A0C241F9F0300C6863B;
-					};
-					A6C08A2D241F9F0700C6863B = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = A6C08A0C241F9F0300C6863B;
 					};
 				};
 			};
@@ -602,13 +550,19 @@
 			projectRoot = "";
 			targets = (
 				A6C08A0C241F9F0300C6863B /* DwPupu */,
-				A6C08A22241F9F0700C6863B /* DwPupuTests */,
-				A6C08A2D241F9F0700C6863B /* DwPupuUITests */,
+				A64F80BA24299A2200DD232E /* DwPupuTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A64F80B924299A2200DD232E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6C08A0B241F9F0300C6863B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -642,24 +596,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6C08A21241F9F0700C6863B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6C08A2C241F9F0700C6863B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		082E891EF66DFA33AC03D8EC /* [CP] Check Pods Manifest.lock */ = {
+		49325AE7B87BDDAFDADE03C2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -681,28 +621,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3B6A9001607B8E809A504C0D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DwPupuAbstract-DwPupuUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		57996D3696E108F7C18BB406 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -718,6 +636,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupu/Pods-DwPupuAbstract-DwPupu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57FC8EDD3794BA3B9704EA25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7E48439CCD7A41C1ACFDC934 /* [CP] Check Pods Manifest.lock */ = {
@@ -742,43 +677,18 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8B872F1A7B10C460A6A5245C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuTests/Pods-DwPupuAbstract-DwPupuTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F9746BD102C1B68BF69FF186 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuUITests/Pods-DwPupuAbstract-DwPupuUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuUITests/Pods-DwPupuAbstract-DwPupuUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DwPupuAbstract-DwPupuUITests/Pods-DwPupuAbstract-DwPupuUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A64F80B724299A2200DD232E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64F80C624299C1900DD232E /* CategoryViewModelTests.swift in Sources */,
+				A64F80BE24299A2200DD232E /* DwPupuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6C08A09241F9F0300C6863B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -829,38 +739,59 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6C08A1F241F9F0700C6863B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6C08A28241F9F0700C6863B /* DwPupuTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6C08A2A241F9F0700C6863B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6C08A33241F9F0700C6863B /* DwPupuUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A6C08A25241F9F0700C6863B /* PBXTargetDependency */ = {
+		A64F80C124299A2200DD232E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A6C08A0C241F9F0300C6863B /* DwPupu */;
-			targetProxy = A6C08A24241F9F0700C6863B /* PBXContainerItemProxy */;
-		};
-		A6C08A30241F9F0700C6863B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A6C08A0C241F9F0300C6863B /* DwPupu */;
-			targetProxy = A6C08A2F241F9F0700C6863B /* PBXContainerItemProxy */;
+			targetProxy = A64F80C024299A2200DD232E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A64F80C224299A2200DD232E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAF82E91E03B0BFE17688284 /* Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L6U7BB57HF;
+				INFOPLIST_FILE = DwPupuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/朴朴.app/朴朴";
+			};
+			name = Debug;
+		};
+		A64F80C324299A2200DD232E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18F177F8E714D693E09F29F2 /* Pods-DwPupuAbstract-DwPupuTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L6U7BB57HF;
+				INFOPLIST_FILE = DwPupuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/朴朴.app/朴朴";
+			};
+			name = Release;
+		};
 		A6C08A35241F9F0700C6863B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1019,97 +950,18 @@
 			};
 			name = Release;
 		};
-		A6C08A3B241F9F0700C6863B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAF82E91E03B0BFE17688284 /* Pods-DwPupuAbstract-DwPupuTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L6U7BB57HF;
-				INFOPLIST_FILE = DwPupuTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupuTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DwPupu.app/DwPupu";
-			};
-			name = Debug;
-		};
-		A6C08A3C241F9F0700C6863B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18F177F8E714D693E09F29F2 /* Pods-DwPupuAbstract-DwPupuTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L6U7BB57HF;
-				INFOPLIST_FILE = DwPupuTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupuTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DwPupu.app/DwPupu";
-			};
-			name = Release;
-		};
-		A6C08A3E241F9F0700C6863B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7211F44D6C1C27CD618159F /* Pods-DwPupuAbstract-DwPupuUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L6U7BB57HF;
-				INFOPLIST_FILE = DwPupuUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupuUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DwPupu;
-			};
-			name = Debug;
-		};
-		A6C08A3F241F9F0700C6863B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6992C6460A59726FBDBD157E /* Pods-DwPupuAbstract-DwPupuUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L6U7BB57HF;
-				INFOPLIST_FILE = DwPupuUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupuUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DwPupu;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A64F80C424299A2200DD232E /* Build configuration list for PBXNativeTarget "DwPupuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A64F80C224299A2200DD232E /* Debug */,
+				A64F80C324299A2200DD232E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A6C08A08241F9F0300C6863B /* Build configuration list for PBXProject "DwPupu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1124,24 +976,6 @@
 			buildConfigurations = (
 				A6C08A38241F9F0700C6863B /* Debug */,
 				A6C08A39241F9F0700C6863B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A6C08A3A241F9F0700C6863B /* Build configuration list for PBXNativeTarget "DwPupuTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A6C08A3B241F9F0700C6863B /* Debug */,
-				A6C08A3C241F9F0700C6863B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A6C08A3D241F9F0700C6863B /* Build configuration list for PBXNativeTarget "DwPupuUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A6C08A3E241F9F0700C6863B /* Debug */,
-				A6C08A3F241F9F0700C6863B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

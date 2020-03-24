@@ -16,6 +16,10 @@ class CategoryNaviTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func update(with model: Category) {
+        self.nameLabel.text = model.name
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
