@@ -33,7 +33,8 @@
 
 ## 欢迎技术交流
 
-    mail:(xiao303178394@gmail.com)[xiao303178394@gmail.com]
+    mail:xiao303178394@gmail.com
+    
     wechat: xiao303178394
 
 
