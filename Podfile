@@ -14,7 +14,7 @@ abstract_target 'DwPupuAbstract' do
     pod 'RxRealmDataSources', '0.2.10'
     pod 'SnapKit', '~> 5.0.0'
     pod 'PullToRefresher'
-    pod 'Kingfisher', '5.3.1'
+    pod 'Kingfisher'
     pod 'Gifu'
     pod 'Hue'
     pod 'pop'

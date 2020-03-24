@@ -147,7 +147,7 @@
 		A68AC43524271FC90058E2BB /* CategoryMainTopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMainTopCollectionViewCell.xib; sourceTree = "<group>"; };
 		A68AC43824271FE70058E2BB /* CategoryMainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		A68AC43924271FE70058E2BB /* CategoryMainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMainItemCollectionViewCell.xib; sourceTree = "<group>"; };
-		A6C08A0D241F9F0300C6863B /* 朴朴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "朴朴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C08A0D241F9F0300C6863B /* 仿朴朴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "仿朴朴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C08A10241F9F0300C6863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C08A19241F9F0600C6863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6C08A1E241F9F0600C6863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -408,7 +408,7 @@
 		A6C08A0E241F9F0300C6863B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6C08A0D241F9F0300C6863B /* 朴朴.app */,
+				A6C08A0D241F9F0300C6863B /* 仿朴朴.app */,
 				A64F80BB24299A2200DD232E /* DwPupuTests.xctest */,
 			);
 			name = Products;
@@ -514,7 +514,7 @@
 			);
 			name = DwPupu;
 			productName = DwPupu;
-			productReference = A6C08A0D241F9F0300C6863B /* 朴朴.app */;
+			productReference = A6C08A0D241F9F0300C6863B /* 仿朴朴.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -922,7 +922,7 @@
 				);
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupu;
-				PRODUCT_NAME = "朴朴";
+				PRODUCT_NAME = "仿朴朴";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -944,7 +944,7 @@
 				);
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.DwPupu;
-				PRODUCT_NAME = "朴朴";
+				PRODUCT_NAME = "仿朴朴";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

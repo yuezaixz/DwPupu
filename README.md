@@ -1,6 +1,10 @@
 # DwPupu
 
-    仿朴朴
+仿朴朴
+
+<p align="left" >
+  <img src="http://7oxfjd.com2.z0.glb.qiniucdn.com/2020-03-24-preview_3.gif" alt="preview" title="preview" width = "320">
+</p>
 
 ## 环境
 
@@ -31,3 +35,5 @@
 
     mail:(xiao303178394@gmail.com)[xiao303178394@gmail.com]
     wechat: xiao303178394
+
+

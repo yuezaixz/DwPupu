@@ -12,6 +12,10 @@ import RxCocoa
 import RxBlocking
 
 class CategoryViewModelTests: XCTestCase {
+    
+//    private func createViewModel() -> CategoryViewModel {
+//      return CategoryViewModel()
+//    }
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
